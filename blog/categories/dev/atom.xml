@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Dreaming Black Cat]]></title>
-  <link href="http://dreamingblackcat.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: dev | Dreaming Black Cat]]></title>
+  <link href="http://dreamingblackcat.github.io/blog/categories/dev/atom.xml" rel="self"/>
   <link href="http://dreamingblackcat.github.io/"/>
   <updated>2014-05-19T13:20:26+06:30</updated>
   <id>http://dreamingblackcat.github.io/</id>
@@ -40,48 +40,33 @@
 
 <h3>Hello World</h3>
 
-<p>  Programming Language မ်ား ေလ့လာရာတြင္ Hello World program ျဖင့္ စတင္ျခင္းသည္ ထုံး စံ တစ္ခု လုိပင္ ျဖစ္ေနပါျပီ။ ရူဘီ အတြက္ Hello World မွာ အလြန္ လြယ္ကူ ပါသည္။ <code>puts "Hello World"</code> ဆုိလွ်င္ ့ Hello World ထုတ္ေပးေသာ program တစ္ခု ျဖစ္ပါျပီ။ puts သည္ console ကုိ print ထုတ္ေပးေသာ system function တစ္ခု ျဖစ္သည္။ ေနာက္ က &ldquo;Hello World&rdquo; ဟူေသာ string ထည့္ေပးလုိက္ေသာအခါ console ေပါ္ တြင္ output ထြက္လာပါသည္။ ~ <code>puts</code> သည္ အလုိအေလ်ာက္ ေနာက္ တစ္လုိင္း ဆင္းေပးပါသည္။&#8217;\n&#8217; သတ္သတ္ထည့္ေပးစရာမလုိပါ။</p>
+<p>  Programming Language မ်ား ေလ့လာရာတြင္ Hello World program ျဖင့္ စတင္ျခင္းသည္ ထုံး စံ တစ္ခု လုိပင္ ျဖစ္ေနပါျပီ။ ရူဘီ အတြက္ Hello World မွာ အလြန္ လြယ္ကူ ပါသည္။ <code>puts "Hello World"</code> ဆုိလွ်င္ ့ Hello World ထုတ္ေပးေသာ program တစ္ခု ျဖစ္ပါျပီ။ puts သည္ console ကုိ print ထုတ္ေပးေသာ system function တစ္ခု ျဖစ္သည္။ ေနာက္ က &ldquo;Hello World&rdquo; ဟူေသာ string ထည့္ေပးလုိက္ေသာအခါ console ေပါ္ တြင္ output ထြက္လာပါသည္။ ~ <code>puts</code> သည္ အလုိအေလ်ာက္ ေနာက္ တစ္လုိင္း ဆင္းေပးပါသည္။'\n' သတ္သတ္ထည့္ေပးစရာမလုိပါ။</p>
 
 <h3>Methods or Functions</h3>
 
-<p>  ရူဘီ method တစ္ခု ကုိ <code>def</code> နွင့္ <code>end</code> keyword နွစ္ခုျဖင့္ သတ္မွတ္ပါသည္။</p>
-
-<figure class='code'><figcaption><span>&#8220;ruby&#8221; </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">my_method</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;Hello World&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>  ရူဘီ တြင္ method မ်ားအား အသုံးျပု ပုံဂရမ္မာက ထူးျခား ပါသည္။ အျခား language မ်ား ကဲ့ သုိ့  ၀ုိက္ကြင္း နွစ္ခု ထည့္ စရာမလုိပါ။ မိမိေခါ္လုိေသာ method name ကုိ ေရးလုိက္လွ်င္ ေခါ္လုိ့ ရပါသည္။ အကယ္၍ parameter ေပးလွ်င္ space ျခား ျပီး ေပးရုံပဲ ျဖစ္သည္။ ဥပမာ <code>puts "Hello"</code> သည္ puts method ကုိ &ldquo;Hello&rdquo; parameter ေပး၍ ေခါ္ထားျခင္းျဖစ္သည္။ multiple parameter ေပးလွ်င္ ေကာ္မာ , ခံျပီးထပ္ထည့္လုိ့ ရပါသည္။ ဥပမာ <code>add 1,2</code> သည္ add method ကုိ parameter 1 နွင့္ 2 ေပး၍ ေခါ္လိုက္ျခင္းျဖစ္သည္။အကယ္၍ ၀ုိက္ကြင္း ေပး ျပီး ေခါ္ခ်င္လွ်င္လည္း ေခါ္လုိ့ ရပါသည္။ ဥမာ <code>add(1,2)</code>သည္ လည္း မွန္ကန္ေသာ ေရးနည္းျဖစ္သည္။ မ်ားေသာအားျဖင့္ တစ္ဆင့္ထဲေခါ္ေသာ method မ်ားကုိ space ျဖင့္ ေရးျပီး နွစ္ဆင့္သုံးဆင့္ေခါ္ ေသာ၊ ရွုပ္ေထြးနုိင္သည့္ method call မ်ားတြင္ ၀ုိက္ကြင္း ထည့္ေရးေလ့ရွိသည္။ ရူဘီ တြင္ method အားလုံးသည္ return ျပန္ ပါသည္။ return keyword ျဖင့္ သတ္သတ္ return ျပန္လုိ့ရသလုိ return keyword မပါ လွ်င္လည္း ေနာက္ဆုံ းအေျကာင္း ၏ ရလဒ္ကုိ အလုိလုိ return ျပန္ သြားမည္ျဖစ္သည္။ ရူဘီ method မ်ားအား class တစ္ခုထဲတြင္ member တစ္ခု အေနနွင့္ထည့္ေရးနုိင္သလုိ global space တြင္  သူ့ခ်ည္းသက္သက္လည္း ေရးနုိင္ပါသည္။</p>
-
-<p>မွတ္ခ်က္။ ။ ရူဘီသည္ object မ်ားကုိ အေျခခံထားေသာ language တစ္ခုျဖစ္ပါသည္။ ရူဘီ တြင္ အရာရာ သည္ object မ်ား နွင့္ ၎တုိ့ အခ်င္းခ်င္း ဆက္သြယ္ေနျကေသာ message မ်ားသာျဖစ္ပါသည္။ထုိအေျကာင္းကုိ class နွင့္ object မ်ားအေျကာင္းေရာက္မွ အေသးစိတ္ရွင္းသြားပါမည္။</p>
-
-<h3>Conditionals</h3>
-
-<p>  အျခားျခားေသာ language မ်ားလုိပင္ ရူဘီ တြင္လည္း conditional statement မ်ား ေရးနုိင္ပါသည္။ if  ေနာက္တြင္ မိမိစစ္လုိေသာ မွန္\မွား expression ကုိ ေရး၍ then ေနာက္တြင္ မွန္လွ်င္လုပ္မည့္ expression, else ေနာက္တြင္ မွားလွ်င္ လုပ္မည့္ expression ကုိ ေရးရပါသည္။ မွတ္ရမည့္တစ္ခ်က္မွာ if ဖြင့္ ျပီးတုိင္း ေနာက္က end ပိတ္ေပးရျခင္းျဖစ္သည္။ ဥပမာ</p>
-
-<figure class='code'><figcaption><span>&#8220;ruby&#8221; </span></figcaption>
+<p>  ရူဘီ method တစ္ခု ကုိ <code>def</code> နွင့္ <code>end</code> keyword နွစ္ခုျဖင့္ သတ္မွတ္ပါသည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;ruby&rdquo; </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">if</span> <span class="kp">true</span> <span class="k">then</span>
-</span><span class='line'>      <span class="nb">puts</span> <span class="s2">&quot;True&quot;</span>
-</span><span class='line'>  <span class="k">else</span>
-</span><span class='line'>      <span class="nb">puts</span> <span class="s2">&quot;False&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">my_method</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;puts &quot;Hello World&quot;</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+  ရူဘီ တြင္ method မ်ားအား အသုံးျပု ပုံဂရမ္မာက ထူးျခား ပါသည္။ အျခား language မ်ား ကဲ့ သုိ့  ၀ုိက္ကြင္း နွစ္ခု ထည့္ စရာမလုိပါ။ မိမိေခါ္လုိေသာ method name ကုိ ေရးလုိက္လွ်င္ ေခါ္လုိ့ ရပါသည္။ အကယ္၍ parameter ေပးလွ်င္ space ျခား ျပီး ေပးရုံပဲ ျဖစ္သည္။ ဥပမာ <code>puts "Hello"</code> သည္ puts method ကုိ &ldquo;Hello&rdquo; parameter ေပး၍ ေခါ္ထားျခင္းျဖစ္သည္။ multiple parameter ေပးလွ်င္ ေကာ္မာ , ခံျပီးထပ္ထည့္လုိ့ ရပါသည္။ ဥပမာ <code>add 1,2</code> သည္ add method ကုိ parameter 1 နွင့္ 2 ေပး၍ ေခါ္လိုက္ျခင္းျဖစ္သည္။အကယ္၍ ၀ုိက္ကြင္း ေပး ျပီး ေခါ္ခ်င္လွ်င္လည္း ေခါ္လုိ့ ရပါသည္။ ဥမာ <code>add(1,2)</code>သည္ လည္း မွန္ကန္ေသာ ေရးနည္းျဖစ္သည္။ မ်ားေသာအားျဖင့္ တစ္ဆင့္ထဲေခါ္ေသာ method မ်ားကုိ space ျဖင့္ ေရးျပီး နွစ္ဆင့္သုံးဆင့္ေခါ္ ေသာ၊ ရွုပ္ေထြးနုိင္သည့္ method call မ်ားတြင္ ၀ုိက္ကြင္း ထည့္ေရးေလ့ရွိသည္။ ရူဘီ တြင္ method အားလုံးသည္ return ျပန္ ပါသည္။ return keyword ျဖင့္ သတ္သတ္ return ျပန္လုိ့ရသလုိ return keyword မပါ လွ်င္လည္း ေနာက္ဆုံ းအေျကာင္း ၏ ရလဒ္ကုိ အလုိလုိ return ျပန္ သြားမည္ျဖစ္သည္။ ရူဘီ method မ်ားအား class တစ္ခုထဲတြင္ member တစ္ခု အေနနွင့္ထည့္ေရးနုိင္သလုိ global space တြင္  သူ့ခ်ည္းသက္သက္လည္း ေရးနုိင္ပါသည္။</p>
 
+<p>မွတ္ခ်က္။ ။ ရူဘီသည္ object မ်ားကုိ အေျခခံထားေသာ language တစ္ခုျဖစ္ပါသည္။ ရူဘီ တြင္ အရာရာ သည္ object မ်ား နွင့္ ၎တုိ့ အခ်င္းခ်င္း ဆက္သြယ္ေနျကေသာ message မ်ားသာျဖစ္ပါသည္။ထုိအေျကာင္းကုိ class နွင့္ object မ်ားအေျကာင္းေရာက္မွ အေသးစိတ္ရွင္းသြားပါမည္။</p>
 
-<p>else ကုိျကားထဲတြင္ ျကုိက္သေလာက္ ညွပ္ထည့္၍ေရးနုိင္ပါသည္။ မွန္\မွား expression ကုိ <code>()</code> ၀ုိက္ကြင္း မထည့္လည္းရပါသည္။ အဓိကက if တစ္ခုဖြင့္တုိင္း ထုိ if နွင့္သက္ဆုိင္ရာ အဆုံးသတ္တြင္ <code>end</code> ထည့္ေပးရျခင္းျဖစ္သည္။ ရူဘီတြင္ if နွင့္ ဆန့္က်င္ဘက္ unless လည္းရွိပါသည္။ unless မွာ if not နွင့္ အတူတူျဖစ္သည္။ ပုိမုိ ရုိးရွင္းေသာ english grammar ပုံစံအတုိင္းေရး နုိင္ေအာင္ ထည့္သြင္းေပးထားျခင္းျဖစ္သည္။ unless ကုိ သုံးခ်င္လွ်င္ <code>if</code> ေနရာမွာ <code>unless</code> ကုိ အစားထုိးေရးရုံပဲ ျဖစ္သည္။ <code>if</code> <code>unless</code> နွစ္ခုလုံးကုိ အတုိေရးနုိင္ေသာ ပုံစံလည္းရွိသည္။ တစ္ေျကာင္း if ဟုတ္ ေခါ္ေသာ ပုံစံျဖစ္သည္။ မွန္လွ်င္လုပ္မည့္ expression ကုိ ေရွ့ က ေရး၍  ေနာက္ တြင္ <code>if</code> နွင့္ မွန္\မွား expression ကုိ ထည့္ရသည္။ဥပမာ <code>puts "True" if true</code> , <code>puts "false" unless false</code> စသျဖင့္ ပုံစံမ်ိ  ုး ျဖစ္သည္။ တစ္ေျကာင္း ပုံစံတြင္ <code>end</code> keyword ထည့္ေပးရန္မလုိပါ။
-  ရူဘီတြင္ switch statement လည္းရွိပါသည္။ သုိ့ေသာ္ switch keyword ကိုေတာ့ မသုံးပါ။ case&hellip;when ပုံစံျဖင့္ သုံးပါသည္။ <code>case</code>ေနာက္ တြင္ စစ္ခ်င္ေသာ မွန္\မွား expression ကုိ ထည့္၍ ေအာက္ က when ေနာက္တြင္ မိမိစစ္ခ်င္ေသာ expression တစ္ခုခ်င္းအတြက္ စစ္နုိင္ပါသည္။default statement ကိုေတာ့ else ျဖင့္ သုံးရပါသည္။ အားလုံးျပီးသြားလွ်င္ <code>end</code> keyword ပိတ္ေပးဖုိ့လုိပါသည္။ ဥပမာ</p>
+<h3>Conditionals</h3>
 
-<figure class='code'><figcaption><span>&#8220;ruby&#8221; </span></figcaption>
+<p>  အျခားျခားေသာ language မ်ားလုိပင္ ရူဘီ တြင္လည္း conditional statement မ်ား ေရးနုိင္ပါသည္။ if  ေနာက္တြင္ မိမိစစ္လုိေသာ မွန္\မွား expression ကုိ ေရး၍ then ေနာက္တြင္ မွန္လွ်င္လုပ္မည့္ expression, else ေနာက္တြင္ မွားလွ်င္ လုပ္မည့္ expression ကုိ ေရးရပါသည္။ မွတ္ရမည့္တစ္ခ်က္မွာ if ဖြင့္ ျပီးတုိင္း ေနာက္က end ပိတ္ေပးရျခင္းျဖစ္သည္။ ဥပမာ
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;ruby&rdquo; </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -91,17 +76,50 @@
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">my_number</span> <span class="o">=</span> <span class="mi">3</span>
-</span><span class='line'>  <span class="k">case</span> <span class="n">my_number</span>
-</span><span class='line'>  <span class="k">when</span> <span class="mi">3</span>
-</span><span class='line'>      <span class="nb">puts</span> <span class="mi">3</span>
-</span><span class='line'>  <span class="k">when</span> <span class="mi">4</span>
-</span><span class='line'>      <span class="nb">puts</span> <span class="mi">4</span>
-</span><span class='line'>  <span class="k">else</span>
-</span><span class='line'>      <span class="nb">puts</span> <span class="s2">&quot;Default&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;if true then</span>
+</span><span class='line'><span class="sr">    puts &quot;True&quot;</span>
+</span><span class='line'><span class="sr">else </span>
+</span><span class='line'><span class="sr">    puts &quot;False&quot;</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+else ကုိျကားထဲတြင္ ျကုိက္သေလာက္ ညွပ္ထည့္၍ေရးနုိင္ပါသည္။ မွန္\မွား expression ကုိ <code>()</code> ၀ုိက္ကြင္း မထည့္လည္းရပါသည္။ အဓိကက if တစ္ခုဖြင့္တုိင္း ထုိ if နွင့္သက္ဆုိင္ရာ အဆုံးသတ္တြင္ <code>end</code> ထည့္ေပးရျခင္းျဖစ္သည္။ ရူဘီတြင္ if နွင့္ ဆန့္က်င္ဘက္ unless လည္းရွိပါသည္။ unless မွာ if not နွင့္ အတူတူျဖစ္သည္။ ပုိမုိ ရုိးရွင္းေသာ english grammar ပုံစံအတုိင္းေရး နုိင္ေအာင္ ထည့္သြင္းေပးထားျခင္းျဖစ္သည္။ unless ကုိ သုံးခ်င္လွ်င္ <code>if</code> ေနရာမွာ <code>unless</code> ကုိ အစားထုိးေရးရုံပဲ ျဖစ္သည္။ <code>if</code> <code>unless</code> နွစ္ခုလုံးကုိ အတုိေရးနုိင္ေသာ ပုံစံလည္းရွိသည္။ တစ္ေျကာင္း if ဟုတ္ ေခါ္ေသာ ပုံစံျဖစ္သည္။ မွန္လွ်င္လုပ္မည့္ expression ကုိ ေရွ့ က ေရး၍  ေနာက္ တြင္ <code>if</code> နွင့္ မွန္\မွား expression ကုိ ထည့္ရသည္။ဥပမာ <code>puts "True" if true</code> , <code>puts "false" unless false</code> စသျဖင့္ ပုံစံမ်ိ  ုး ျဖစ္သည္။ တစ္ေျကာင္း ပုံစံတြင္ <code>end</code> keyword ထည့္ေပးရန္မလုိပါ။
+  ရူဘီတြင္ switch statement လည္းရွိပါသည္။ သုိ့ေသာ္ switch keyword ကိုေတာ့ မသုံးပါ။ case&hellip;when ပုံစံျဖင့္ သုံးပါသည္။ <code>case</code>ေနာက္ တြင္ စစ္ခ်င္ေသာ မွန္\မွား expression ကုိ ထည့္၍ ေအာက္ က when ေနာက္တြင္ မိမိစစ္ခ်င္ေသာ expression တစ္ခုခ်င္းအတြက္ စစ္နုိင္ပါသည္။default statement ကိုေတာ့ else ျဖင့္ သုံးရပါသည္။ အားလုံးျပီးသြားလွ်င္ <code>end</code> keyword ပိတ္ေပးဖုိ့လုိပါသည္။ ဥပမာ
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;ruby&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;my_number = 3</span>
+</span><span class='line'><span class="sr">case my_number</span>
+</span><span class='line'><span class="sr">when 3</span>
+</span><span class='line'><span class="sr">    puts 3</span>
+</span><span class='line'><span class="sr">when 4</span>
+</span><span class='line'><span class="sr">    puts 4</span>
+</span><span class='line'><span class="sr">else</span>
+</span><span class='line'><span class="sr">    puts &quot;Default&quot;</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h3>Operators</h3>
 
@@ -112,17 +130,6 @@
 <p>ေက်းဇူးတင္ပါသည္</p>
 
 <p><em>dbc</em></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress Blog အသစ္]]></title>
-    <link href="http://dreamingblackcat.github.ionew-octopress-blog"/>
-    <updated>2014-05-14T17:13:34+06:30</updated>
-    <id>http://dreamingblackcat.github.io./a-new-blog</id>
-    <content type="html"><![CDATA[<p>ကြ်န္ေတာ့္ အေနနဲ့ ေက်ာင္းသားဘ၀ကထဲက ကိုယ္ပုိင္ ဘေလာ့ခ္ တစ္ခု ေရးခ်င္ခဲ့ တာ ျကာပါျပီ။ ဒီျကားထဲမွာ blogging engine တစ္ခ်ိ  ု့ နဲ့ စမ္းေရး ျကည့္ခဲ့ ေပမဲ့ content လည္း မယ္မယ္ရရ မရွိ၊ စြဲစြဲ ျမဲျမဲ လည္း မရွိခဲ့ ပါဘူး။ ေနာက္ ပုိင္း မွာ Ruby Programming ကို စေလ့လာ ျပီး ေနာက္ပုိင္း Ruby Community နဲ့ စတင္ထိေတြ ့ခဲ့ ပါ တယ္။ Expert ေတြ၊ Geek ေတြ ရဲ ့ blog ေတြ ကုိ ဖတ္ရျပီး သူတို့ ေတြ လုိ မ်ိ  ုး ကုိယ္ကုိယ္တုိင္လည္း စာဖတ္သူေတြ အက် ိ ုး ရွိေစမဲ့ blog မ်ိ  ုး ေရးခ်င္လာပါတယ္။ အဲဒီ မွာ Octopress Project ကို စေတြ ့တာ ပါပဲ။ စဖတ္ရကထဲက stactic page ဆုိတာက ကြ်န္ေတာ့ စိတ္ကို ဆြဲေဆာင္ေစပါတယ္။ Markdown format နဲ့ ေရးရတာက အလုပ္ရွုပ္သက္သာေစပါတယ္။ ေနာက္ Community က ေပးထားတဲ့ အေျခခံ theme ေတြက လည္း ရုိးရွင္းျပီး ျကည့္လုိ့ေကာင္းပါတယ္။ ဒါနဲ့ စျပီး လုပ္ ျဖစ္ပါတယ္။ စလုပ္ေတာ့ ကိုယ္ပုိင္ theme လုပ္မယ္ဆုိ ျပီး စလုပ္ပါတယ္။ ဒါေပမဲ့ နဂုိတည္း က web design ပါရမီမပါလွတဲ့ ကြ်န္ေတာ့္ အတြက္ ကြ်န္ေတာ့္ theme က သူမ်ား ေတြ လုပ္ထားတာေလာက္ လည္း ျကည့္လို့မေကာင္း ကာလာလည္း မအပ္စပ္တာနဲ့ <a href="http://octopressthemes.com">Octorpress Themes</a> က lavendar theme ကုိ ယူထားပါတယ္ basic theme ကုိ ကာလာ ပဲ ခ်ိန္းထားတာပါ။ ရုိးရွင္းျပီး မ်က္စိေအးပါတယ္။</p>
-
-<p>တကယ္ေတာ့ စာေရးရတာ မလြယ္ပါဘူး။ ငယ္ငယ္ကေတာ့ ဒုိင္ယာရီေတြ ကဗ်ာေတြ ေရးျဖစ္ေပမဲ့ ေက်ာင္းသားဘ၀ကုိ ေက်ာ္လြန္ျပီး အလုပ္ခြင္ကုိ ၀င္ရျပီ ဆုိတာနဲ့ စာေရးဖုိ့ဆုိတာ သက္သက္ အခ်ိန္ေပးရတဲ့ အရာ တစ္ခု ျဖစ္လာတာပါ။ ဒါေပမဲ့ လည္း ကြ်န္ေတာ္ ေလ့လာတာေတြ၊ ကြ်န္ေတာ္ ေတြးမိတာ ေတြ၊ ကြ်န္ေတာ္ ေ၀မ်ွ ခ်င္တာေတြ အကုန္လုံးကုိ ေ၀မွ် နုိင္ဖုိ့အတြက္ ကြ်န္ေတာ္ စာေရးမွ ျဖစ္မွာပါ။ မဟုတ္ရင္ ကြ်န္ေတာ့္ရဲ့  ျကိုးစားအားထုတ္မွုေတြ၊ ေတြးမိတဲ့ အေတြး ေတြ ၊ မွားမိတဲ့ အမွားေတြ ဟာ ေလထဲမွာ ေပ်ာက္သြားမွာပါပဲ။ဒါေျကာင့္ ဒီဘေလာ့ခ္မွာ ကြ်န္ေတာ့္ အေတြး အေခါ္ေတြ၊ အေတြ့အျကုံေတြ ထင္ျမင္ခ်က္ေတြကုိ မွတ္တမ္းတင္သြားပါမယ္။ ဒီ ဘေလာ့ခ္ကုိ ဖတ္မိသူေတြ အားလုံးမဟုတ္ေတာင္ တစ္ဦးတစ္ေလ အတြက္ အက်ိ  ုး တစ္စုံတစ္ခု ျဖစ္ေစရင္ေတာင္ ကြ်န္ေတာ့္ အေနနဲ့ ေက်နပ္ပါျပီ။</p>
 ]]></content>
   </entry>
   
