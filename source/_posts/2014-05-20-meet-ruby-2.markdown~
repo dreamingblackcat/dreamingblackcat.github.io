@@ -1,0 +1,176 @@
+---
+layout: post
+title: "Ruby နွင့္ ေတြ့ ဆုံျခင္း ၂"
+date: 2014-05-20 13:20:52 +0630
+comments: true
+categories: ruby dev series
+---
+ျပီးခဲ့ ေသာ [ေဆာင္းပါး](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/) တြင္ ရူဘီ language မိတ္ဆက္အျဖစ္ variable, types, condtionals စသည္တုိ့ အေျကာင္း ေရးခဲ့ပါသည္။ ဆက္လက္၍ looping structures မ်ား အေျကာင္း ေဖာ္ျပသြားပါမည္။
+
+###Looping Structures
+   ပုံမွန္အားျဖင့္ programming basic တြင္ conditional မ်ား ျပီးသည္နွင့္ looping structure မ်ား လာရျမဲ ျဖစ္သည္။ သုိ့ ေသာ္ ရူဘီ တြင္ looping အသုံးျပု ပုံသည္ အျခား language မ်ားနွင့္ ျခားနားပါသည္။ Loop structure ကုိ သုံး ရန္ အေျကာင္းျပခ်က္ အျကမ္းအားျဖင့္ ၂ မ်ိ  ုး ရွိသည္ဟု ဆုိနုိင္ပါသည္။ တစ္မ် ိ ုး မွာ အျကိမ္ျကိမ္ အဖန္ဖန္ လုပ္ရေသာ အရာ မ်ား အတြက္ သုံးျခင္းျဖစ္ျပီး ေနာက္တစ္မ်ိ  ုးမွာေတာ့ collection ဟုေခါ္ေသာ data ကုိ အစုအေ၀း ျဖင့္ သိမ္းဆည္းသည့္ data structure မ်ားကုိ သုံးျခင္း၊ ျပင္ျခင္း၊ အသစ္ထည့္ျခင္း မ်ား ျပုလုပ္ရန္ျဖစ္သည္။ ရူဘီ တြင္ နွစ္မ်ိ  ုးလုံးအတြက္ loop structure မ်ား သီးသန့္ ရွိပါသည္။ ပထမတစ္မ်ိ  ုးတြင္ အက်  ုံး ၀င္ေသာ  looping မ်ား အတြက္ `loop`, `while`,`until` နွင့္ `for in` control structure မ်ား ရွိသည္။အရုိးရွင္းဆုံးမွာ `loop` statement ျဖစ္သည္။
+
+####`loop` statement
+   `loop` statement ကို အရုိးရွင္းဆုံး infinite loop တစ္ခုအတြက္သုံးနုိင္သည္။ဥပမာ
+{% codeblock "loop Statement" lang:ruby %}
+   loop do
+     puts "hello"
+   end
+{% endcodeblock %}
+အထက္ပါ loop သည္ user က ctrl+c မနွိပ္မခ်င္း loop ပတ္ေနမည့္ infinite loop တစ္ခုျဖစ္သည္။ သူ့ခ်ညး္ သက္သက္ကေတာ့ သိပ္အသုံးမ၀င္ ပါ။ သုိ့ ေသာ္ ထုိ loop ကုိ control လုပ္နုိင္မည့္ `break`, `next` နွင့္ `redo` keyword မ်ားလည္းရွိပါသည္။ `break` keyword သည္ loop ကုိ ရပ္သြားေစမည့္ keyword ျဖစ္ျပီး `next` keyword ကေတာ့ လက္ရွိအျကိမ္ ေက်ာ္ ၍ ေနာက္တစ္ေက်ာ့ကုိ skip လုပ္မည့္ keyword ျဖစ္သည္။ `redo` ကေတာ့ လက္ ရွိအေက်ာ့ကုိ ထပ္ေက်ာ့ လုပ္ေစမည့္ keyword ျဖစ္သည္။ ၎ keyword မ်ား ျဖင့္ တြဲသုံးပါက loop statement သည္ လည္း အစြမ္းထက္ေသာ control structure တစ္ခု ျဖစ္လာပါသည္။
+
+####`while` loop
+   `while` statement ကေတာ့ အျခား language မ်ား နွင့္ထပ္တူျဖစ္သည္။ `while` keyword ေနာက္ တြင္ ေပးထားေသာ အေျခအေန တစ္ခု ေျပလည္ေနသ၍ looping ပတ္ေပးမည့္ statement ျဖစ္သည္။ ဥပမာ-
+{% codeblock "while Statement" lang:ruby %}
+  i = 1
+  while i < 4
+      puts i
+      i += 1
+  end
+{% endcodeblock %}
+အထက္ပါကုတ္ သည္ ေအာက္ပါအတုိင္း ထြက္လာမည္ျဖစ္သည္။
+{% codeblock "Output" lang:sh %}
+   1
+   2
+   3
+    => nil 
+{% endcodeblock %}
+####`until` loop
+   `until`statement သည္ while statement နွင့္ ေရးသားပုံျခင္းတူျပီး while ၏ ဆန့္က်င္ဘက္ ျဖစ္သည္။ `until` loop ၏ အသုံးျပု ပုံ မွာ `until` ေနာက္တြင္ ေပးထားေသာ conditional မေျပ လည္ေသးသ၍ျပ ုလုပ္မည္ျဖစ္ျပီး ေျပလည္သြားသည့္အခ်ိန္တြင္ ျပုလုပ္ေတာ့မည္ မဟုတ္ေပ။ 
+{% codeblock "until Statement" lang:ruby %}
+  i = 1
+  until i > 4
+      puts i
+      i += 1
+  end
+{% endcodeblock %}
+အထက္ပါကုတ္ သည္ ေအာက္ပါအတုိင္း ထြက္လာမည္ျဖစ္သည္။
+{% codeblock "Output" lang:sh %}
+   1
+   2
+   3
+   4
+    => nil 
+{% endcodeblock %}
+`until` နွင့္ `while` မွာ `if` နွင့္ `unless` ကဲ့သုိ့ပင္ ျဖစ္သည္။ ၎တုိ့ ကုိ one line loop မ်ား အျဖစ္ တစ္ေျကာင္းပုံစံျဖင့္လည္းေရးနုိင္သည္။ဥ ပမာ `puts i while i > 4` , `puts i until i < 4` စသျဖင့္ ပုံစံမ် ိ ုးလည္း သုံးလုိ့ရသည္။ ရူဘီ တြင္ `do while` statement မရွိေပ။ `do while` ကဲ့ သုိ့ အနည္းဆုံးတစ္ျကိမ္ လုပ္ေစလုိ ေသာ loop မ် ိ ုးတြင္ loop instruction အား `begin` နွင့္ `end` keyword မ်ား အတြင္း ၌ ထည့္ေပးရသည္။ ဥပမာ
+{% codeblock "do while style Statement" lang:ruby %}
+   i=11
+   begin
+     print "#{i} "
+   i+=1
+   end while i < 10
+{% endcodeblock %}
+အထက္ပါကုတ္တြင္ begin end အတြင္းမွ expression သည္ အနည္းဆုံး တစ္ျကိမ္ အလုပ္လုပ္ မည္ ျဖစ္ျပီး ေအာက္ပါအတုိင္း ထြက္လာမည္ျဖစ္သည္။
+{% codeblock "Output" lang:sh %}
+   11  =>  nil
+{% endcodeblock %}
+####`for in` loop
+   `for in` loop သည္ iterator ပုံစံမ်ိ  ုးသုံးရေသာ loop ျဖစ္သည္။ ဒုတိယ အမ် ိ ုးအစား loop အတြင္း ၌ ပါ၀င္ေသာ္လည္း loop structure သက္သက္ ပုံစံမ် ိ ုးျဖစ္၍ ဤ ေနရာတြင္ ေဖာ္ျပလုိက္ပါသည္။ `for` keyword ေနာက္ တြင္ မိမိ ထားလုိသည့္ variable ကုိထား ၍ `in` keyword ေနာက္တြင္ မိမိ ပတ္လုိသည္ ့ collection ကုိ ထည့္ေပးရသည္။ ဥပမာ Range object တစ္ခု ျဖစ္ေသာ `1..4` ကို ပတ္လုိသည္ ဆုိပါစို့ ။
+{% codeblock "for in Statement" lang:ruby %}
+   for i in 1..4
+     puts i
+   end
+{% endcodeblock %}
+အထက္ပါအတုိင္း `for in` loop ကုိသုံးနုိင္သည္။
+{% codeblock "Output" lang:sh %}
+   1
+   2
+   3
+   4
+    => nil 
+{% endcodeblock %}
+   အထက္ပါ looping control statement မ်ား အားလုံး တြင္ `break` , `next`, `redo` နွင့္ `retry` keyword မ်ားကုိ သုံးနုိင္ပါသည္။ ရူဘီ သည္ ျပသနာတစ္ခုကုိ နည္းလမ္းမ်ိ  ုးစုံ နွင့္ ေျဖရွင္းနုိင္ေသာ language တစ္ခု ျဖစ္ပါသည္။ အမွန္အကန္ဆုံးနည္း ဟူ၍ မရွိပါ။ မိမိ အဆင္ေျပသလို ယူသုံးယုံပင္ျဖစ္သည္။ ရူဘီသည္ code ၏ ေဖာ္ျပနုိင္စြမ္းကို အဓိကထားသည္ျဖစ္ရာ `while` loop ကုိ not conditional မ်ိ  ုး နွင့္ သုံးျခင္းထက္ `until` loopကုိ သုံးျခင္းမ်ိ  ုးကုိ ပုိမုိ အားေပးပါသည္။
+  ပုံမွန္ ျက ုံေတြ့  ေနရေသာ ျပသနာမ်ား တြင္ data collection မ်ားကုိ ကုိင္တြယ္ျပင္ဆင္ရေသာ အေျခအေနမ်ိ  ုးက မ်ားေလ့ရွိပါသည္။ ထုိအေျခအေနမ်ား အတြက္ ဒုတိယအမ်ိ  ုးအစား loop မ်ားက ပုိ မုိ အသုံး၀င္ပါသည္။ထုိ ကဲ့ သုိ့ looping မ်ားအတြက္ ရူဘီ standard library အတြင္း iterator ပုံစံ method မ်ား စြာ ထည့္သြင္းေပးထားပါသည္။ ထုိ method မ်ား သည္ ရူဘီ ၏ `block` ,`proc` နွင့္ `lambda` object မ်ား ၏ သဘာ၀ကုိ အေျခခံထားပါသည္။ ဤေနရာတြင္ ၎တုိ့ အေျကာင္းကုိ အျကမ္းမွ်သာ ရွင္းျပီး အသုံးမ်ားေသာ iterator method မ်ားကုိ ေဖာ္ျပသြားပါမည္။
+
+####`each` method
+
+   iterator မ်ား အနက္ အသုံး၀င္ဆုံး method မွာ `each` method ျဖစ္သည္။ `each` method သည္ Enumerable module ၏ method တစ္ခုျဖစ္သည္။ Array, Hash အစရွိေသာ collection object မ်ားတြင္ ထည့္သြင္းေပးထားပါသည္။ `each` method ကုိ ေခါ္လုိလွ်င္ collection object ျဖင့္ ေခါ္၍ parameter အျဖစ္ block တစ္ခု ေပးရပါသည္။ ရူဘီ တြင္ block ဆုိသည္မွာ execute ျပု လုပ္နုိင္ေသာ ကုတ္အပိုင္းအစတစ္ခု ျဖစ္သည္။ ထူးျခားခ်က္မွာ ထုိ ကုတ္အပိုင္းအစကို method မ်ားတြင္ parameter အျဖစ္ ေပးနုိင္ျခင္းျဖစ္သည္။ဥပမာ Array တစ္ခုကုိ `each` method အသုံးျပ ု ၍ iterate လုပ္လုိသည္ဆုိပါစို့ ...
+{% codeblock "each method" lang:ruby %}
+   [1,2,3,4].each do |i|
+	puts i
+   end
+{% endcodeblock %}
+အထက္ပါကုတ္ တြင္ `[1,2,3,4]` သည္ Array တစ္ခုျဖစ္ျပီး  ထုိ Array ေပါ္တြင္ .each ဟူ၍ `each` method ကုိ ေခါ္လုိက္သည္။ ထုိ့ေနာက္ ၎ `each` method အား `do` နွင့္ `end` နွစ္ခုအျကားတြင္ ကုတ္အပိုင္းအစ တစ္ခု အား block အျဖစ္ parameter ေပးလုိက္ျခင္းျဖစ္သည္။ block တစ္ခု အား `do` ,`end` keyword နွစ္ခု အျကားတြင္ ကုတ္ အပိုင္းအစကုိ ေရးျခင္းျဖင့္လည္းေကာင္း၊ `{`,`}` တြန့္ကြင္း နွစ္ခု အျကားတြင္ ကုတ္အပိုင္းအစေရးျခင္းျဖင့္ လည္းေကာင္း ေဖာ္ျပနုိင္သည္။ ဤ ေနရာ တြင္ `do` , `end` ပုံစံကုိ သုံးထားျခင္းျဖစ္သည္။ `do` ၏ ေနာက္ကပ္ရပ္တြင္ `|` character နွစ္ခု အျကား ေရးထားေသာ `i` သည္ ထုိ ကုတ္အပိုင္းအစ အတြက္ parameter တစ္ခု ျဖစ္သည္။ (~ block အေျကာင္းကုိ သက္ဆုိင္ရာ ေခါင္းစဥ္ေအာက္တြင္အေသးစိတ္ထပ္မံရွင္းသြားပါမည္။)
+`each` method ၏ အလုပ္လုပ္ပုံမွာ Collection အတြင္းမွ item တစ္ခုခ်င္းစီကုိ ေပးထားသည့္ block အား parameter အျဖစ္ ေပး၍ execute လုပ္ ေစျခင္း ျဖစ္သည္။ `for in` loop နွင့္ အလုပ္လုပ္ပုံျခင္းဆင္တူျဖစ္သည္။ ထုိ့ေျကာင့္ Array အတြင္း တြင္ item 3 ခု ရွိပါက item တစ္ခုခ်င္းစီကုိ parameter အျဖစ္သုံး၍ block အတြင္းမွ ကုတ္အပိုင္းအစကုိ သုံးခါ အလုပ္လုပ္သြားမည္ျဖစ္သည္။
+အထက္ပါ ဥပမာ တြင္ Array item မ်ားျဖစ္ေသာ `1`,`2`,`3`,`4`တုိ့ကုိ သုံး၍ တစ္ခု ခ်င္းစီကုိ `i` အျဖစ္ျဖင့္ `puts i` statement ကုိ အလုပ္လုပ္သြားျပီး ေအာက္ပါအတုိင္း ထြက္လာမည္ျဖစ္သည္။ 
+{% codeblock "Output" lang:sh %}
+   1
+   2
+   3
+   4
+    => nil 
+{% endcodeblock %}
+   `each` method သည္ အလြန္အသုံး၀င္ေသာ method တစ္ခုျဖစ္ပါသည္။ ထုိ့ အျပင္ `each` method သုံးထားေသာ ကုတ္ကုိ ျကည့္ပါ။ `[1,2,3,4].each`  english ဘာသာျဖင့္  ၁ ၂ ၃ ၄ တစ္ခုခ်င္းစီကုိ ဟု ေရးထား ျခင္းပင္ ျဖစ္သည္။ ထုိ့ေျကာင့္ each method သည္ ဘာလုပ္မည္ ျဖစ္ေျကာင္းကုိ ရွင္းရွင္းလင္းလင္းေဖာ္ျပထားျပီးသားျဖစ္သည္။ ထုိ့ အျပင္ ကြ်န္ေတာ္တုိ့ သည္ each ဟုေျပာလုိက္ခ်င္းအားျဖင့္ တစ္ခုခ်င္းစီ မွန္း သိျပီးသားျဖစ္သည္။ ကြ်န္ေတာ္တုိ့ အသုံးျပု လုိေသာ collection တြင္ item ဘယ္နွစ္ခု ပါေျကာင္း ကုိ ကြ်န္ေတာ္တုိ့ သိဖုိ့ မလုိ အပ္ေပ။`my_array.each` ဟု ဆုိလုိက္သည္နွင္ ့ `my_array` အတြင္းမွ item တစ္ခုခ်င္းစီကုိ သုံးမည္မွန္းသိျပီးသားျဖစ္သည္။ `my_array` တြင္ item မည္မ်ွ ပါသည္ကုိ သိစရာမလုိေပ။ `my_array` မွာ item 5 ခု ပါလည္း ဤကုတ္ က မွန္ေနျပီး 10 ခု ပါလည္း မွန္ေနမည္သာျဖစ္သည္။ `my_array` ၏ item အေရအတြက္ကဲ့ သုိ့ မလုိအပ္ေသာ အခ်က္အလက္မ်ားအား ကြ်န္ေတာ္တုိ့ မွတ္ထားစရာမလုိေတာ့ေပ။ ထုိ့အျပင္ `my_array` ၏ item အေရအတြက္ ေျပာင္းလဲခဲ့ လွ်င္ ပင္ ကြ်န္ေတာတုိ့ ကုတ္ က မွန္ေနမည္ ျဖစ္ျပီး ကြ်န္ေတာ္တုိ့ ျပု ုလုပ္လုိေသာ အရာကုိ က်စ္က်စ္လ်စ္လ်စ္ ျဖင့္ ေဖာ္ျပနုိင္ျခင္းသည္က ပင္ ရူဘီ ၏ စြမ္းအားျဖစ္ေပသည္။
+
+####`times` method
+   `each` ကဲ့သုိ့ အသုံး၀င္ျပီး က်စ္လ်စ္ေသာ ေနာက္ ထပ္ method တစ္ခုမွာ `times` method ျဖစ္သည္။ `times` method မွာ 1,2,3.. အစရွိေသာ နံပါတ္ object မ်ားအတြင္း ထည့္သြင္းေပးထားေသာ method ျဖစ္သည္။ ၎၏ english အဓိပ္ပါယ္ အတိုင္း  ဘယ္နွျကိမ္ ဟူေသာ အဓိပ္ပါယ္မ်ိ  ုးျဖစ္သည္။ ဥပမာ `4.times` ဆုိ လွ်င္ ၄ ျကိမ္၊ `5.times` ဆုိလွ်င္ ၅ ျကိမ္ အစရွိသျဖင့္ အျကိမ္အေရအတြက္ အတိအက် ပတ္လုိ ေသာ loop structure မ်ားတြင္ အသုံးျပု သည္။ ၎ သည္ လည္း `each` method ကဲ့သို့  block တစ္ခုကို parameter အျဖစ္ လက္ခံျပီး ထုိ block ကုိ သတ္မွတ္ထားေသာအျကိမ္အေရအတြက္ အတုိင္း execute လုပ္ျခင္းျဖစ္သည္။ `times` method အတြက္ block parameter သည္ optional ျဖစ္သည္။ parameter ထည့္ေပးခဲ့လွ်င္ ထုိ parameter အတြင္း loop counter ကုိ ထည့္၍ ကုတ္အပိုင္းအစကုိ execute လုပ္သြားမည္ျဖစ္သည္။ သတိထားရမည္မွာ loop counter မွာ 0 မွ စတင္ျခင္းျဖစ္သည္။
+{% codeblock "times method" lang:ruby %}
+  3.times do | i |
+      puts i
+  end
+{% endcodeblock %}
+
+{% codeblock "Output" lang:sh %}
+   0
+   1
+   2
+    => 3
+{% endcodeblock %}
+
+####`upto` method
+   `upto` သည္ လည္း `times` ကဲ့ သုိ့ ပင္ နံပါတ္ object မ်ားျဖင့္သုံးရေသာ method ျဖစ္သည္။ `upto` က ေနာက္ထပ္ parameter တစ္ခု ပုိလုိသည္။ မည္ ၍ မည္မွ် အထိ ဟူ သည့္ parameter ျဖစ္သည္။ ဥပမာ `1.upto 10` ဆုိလွ်င္ 1 မွ 10 အထိ , `5.upto(10)` ဆိုလွ်င္ 5 မွ 10 အထိ (~ ၀ုိက္ကြင္းမွာ optional ျဖစ္သည္) စသျဖင့္ သုံးနုိင္သည္။ ၎ သည္ လည္း block တစ္ခု လုိပါသည္။ times ကဲ့သုိ့ပင္ block အတြက္ parameter မွာ optional ျဖစ္သည္။
+{% codeblock "upto method" lang:ruby %}
+  3.upto(5) do | i |
+      puts i
+  end
+{% endcodeblock %}
+
+{% codeblock "Output" lang:sh %}
+   3
+   4
+   5
+    => 3 
+{% endcodeblock %}
+
+####`step` method
+   `step` method သည္ loop counter step ကုိ 1 ထက္ပုိ ခ်င္ေသာ အခါ ၌ အသုံးက်ေသာ method တစ္ခုျဖစ္သည္။ `step` method အတြက္ parameter နွစ္ခု နွင့္ block တစ္ခု ေပးရပါသည္။ ပထမ parameter မွာ `upto` ကဲ့ သုိ့ မိမိ ပတ္ လုိသည္ အထိ နံပါတ္ကုိ ေပးရျပီး ဒုတိယ parameter မွာ မိမိ ေပါင္း လုိေသာ loop coutner step ကုိ ေပးရပါသည္။ အကယ္၍ loop တစ္ျကိမ္ လွ်င္ 2 ေပါင္း လုိ ပါ က ဒုတိယ parameter အား 2 ေပးရပါမည္။ ဥပမာ-
+{% codeblock "step method" lang:ruby %}
+  3.step(10, 5) do | i |
+      puts i
+  end
+{% endcodeblock %}
+အထက္ပါကုတ္ တြင္  3 မွ ေန၍ 10 အထိ  တစ္ျကိမ္လ််ွင္ 5 စီ တုိးသြားေသာ loop ပတ္ထားျခင္း ျဖစ္သည္။
+{% codeblock "Output" lang:sh %}
+   3
+   8
+    => 3 
+{% endcodeblock %}
+`step` method မွာ အသုံးနည္းေသာ္လည္း တစ္ဆင့္ထက္ပုိေပါင္းေသာ loop မ်ားအတြက္ အလြယ္တကူ အသုံး ျပ ုနုိင္ေသာ method တစ္ခု ျဖစ္ပါသည္။
+
+#### `each_with_index` method
+   ေနာက္ဆုံးအေန နွင့္ iterator method မ်ား ထဲမွ `each` နည္းတူ အသုံးမ်ားေသာ method တစ္ခု ကို ေဖာ္ျပခ်င္ပါသည္။ `each_with_index` method သည္ `each` method ၏ block တြင္ parameter တစ္ခု ပုိ လာ ေသာ မ် ိ ုးကြဲတစ္ခု ျဖစ္ပါသည္။ ကြ်န္ေတာ္တုိ့ collection မ်ား အသုံး ျပ ု ရာ တြင္ တစ္ခါတစ္ရံ collection item ကုိ သာ မက ၎ item ၏ index ကုိ ထည့္ သြင္း အသုံးျပ ု လုိ ေသာ အခါမ်ား ရွိတတ္ပါသည္။ ထုိ အခါမ်ားတြင္ လြန္စြာ အသုံး၀င္လာေသာ method တစ္ခု ျဖစ္ပါသည္။ ဥပမာ Array တစ္ခု အား item ေရာ index ပါ output ထုတ္လုိသည္ ဆုိပါစုိ့။
+{% codeblock "each_with_index method" lang:ruby %}
+   ["a","b","c"].each_with_index do |value,index|
+      puts index
+      puts value
+   end
+{% endcodeblock %}
+`each` method တုန္းက ကြ်န္ေတာ္တုိ့ ၏ block တြင္ variable တစ္လုံးသာ ထည့္ေပးလုိက္ပါသည္။ ယခု `each_with_index` method တြင္ဒုတိယ variable တစ္လုံးပါလာျပီး ထုိ variable မွာ item တစ္ခုခ်င္းစီ ၏ index ကုိ ထည့္ေပးလုိက္ေသာ parameter တြင္ ျဖစ္သည္။
+{% codeblock "Output" lang:sh %}
+   0
+   a
+   1 
+   b
+   2
+   c
+    => ["a", "b", "c"] 
+{% endcodeblock %}
+   ရူဘီ ၏ collection iterator method မ်ား စြာ က်န္ပါေသးသည္။ သုိ့ေသာ္ ယခုေဖာ္ျပထားေသာ method မ်ားမွာ မျကာခဏ ျကုံေတြ့  အသုံးျပ ု ရ မည့္ method မ်ားျဖစ္ပါသည္။ ရူဘီ standard library ၏ `Enumerable` module တြင္ အသုံး၀င္ေသာ method မ်ားစြာ ရွိပါေသးသည္။ ၎တုိ့ကုိ အလ် ဥ္ းသင့္ လွ်င္ ထပ္မံေဖာ္ျပသြားပါမည္။
+
+ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၁](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)
+
+ဆက္ပါဦးမည္..
+
+ေက်းဇူးတင္ပါသည္
+
+*dbc*
