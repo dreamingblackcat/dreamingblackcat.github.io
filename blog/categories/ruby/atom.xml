@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Dreaming Black Cat]]></title>
   <link href="http://dreamingblackcat.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://dreamingblackcat.github.io/"/>
-  <updated>2014-05-19T13:20:26+06:30</updated>
+  <updated>2014-05-20T13:42:32+06:30</updated>
   <id>http://dreamingblackcat.github.io/</id>
   <author>
     <name><![CDATA[dbc]]></name>
@@ -12,6 +12,396 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby နွင့္ ေတြ့ ဆုံျခင္း ၂]]></title>
+    <link href="http://dreamingblackcat.github.io/blog/2014/05/20/meet-ruby-2/"/>
+    <updated>2014-05-20T13:20:52+06:30</updated>
+    <id>http://dreamingblackcat.github.io/blog/2014/05/20/meet-ruby-2</id>
+    <content type="html"><![CDATA[<p>ျပီးခဲ့ ေသာ <a href="http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/">ေဆာင္းပါး</a> တြင္ ရူဘီ language မိတ္ဆက္အျဖစ္ variable, types, condtionals စသည္တုိ့ အေျကာင္း ေရးခဲ့ပါသည္။ ဆက္လက္၍ looping structures မ်ား အေျကာင္း ေဖာ္ျပသြားပါမည္။</p>
+
+<h3>Looping Structures</h3>
+
+<p>   ပုံမွန္အားျဖင့္ programming basic တြင္ conditional မ်ား ျပီးသည္နွင့္ looping structure မ်ား လာရျမဲ ျဖစ္သည္။ သုိ့ ေသာ္ ရူဘီ တြင္ looping အသုံးျပု ပုံသည္ အျခား language မ်ားနွင့္ ျခားနားပါသည္။ Loop structure ကုိ သုံး ရန္ အေျကာင္းျပခ်က္ အျကမ္းအားျဖင့္ ၂ မ်ိ  ုး ရွိသည္ဟု ဆုိနုိင္ပါသည္။ တစ္မ် ိ ုး မွာ အျကိမ္ျကိမ္ အဖန္ဖန္ လုပ္ရေသာ အရာ မ်ား အတြက္ သုံးျခင္းျဖစ္ျပီး ေနာက္တစ္မ်ိ  ုးမွာေတာ့ collection ဟုေခါ္ေသာ data ကုိ အစုအေ၀း ျဖင့္ သိမ္းဆည္းသည့္ data structure မ်ားကုိ သုံးျခင္း၊ ျပင္ျခင္း၊ အသစ္ထည့္ျခင္း မ်ား ျပုလုပ္ရန္ျဖစ္သည္။ ရူဘီ တြင္ နွစ္မ်ိ  ုးလုံးအတြက္ loop structure မ်ား သီးသန့္ ရွိပါသည္။ ပထမတစ္မ်ိ  ုးတြင္ အက်  ုံး ၀င္ေသာ  looping မ်ား အတြက္ <code>loop</code>, <code>while</code>,<code>until</code> နွင့္ <code>for in</code> control structure မ်ား ရွိသည္။အရုိးရွင္းဆုံးမွာ <code>loop</code> statement ျဖစ္သည္။</p>
+
+<h4><code>loop</code> statement</h4>
+
+<p>   <code>loop</code> statement ကို အရုိးရွင္းဆုံး infinite loop တစ္ခုအတြက္သုံးနုိင္သည္။ဥပမာ
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;loop Statement&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>   <span class="kp">loop</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt; puts &quot;hello&quot;</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါ loop သည္ user က ctrl+c မနွိပ္မခ်င္း loop ပတ္ေနမည့္ infinite loop တစ္ခုျဖစ္သည္။ သူ့ခ်ညး္ သက္သက္ကေတာ့ သိပ္အသုံးမ၀င္ ပါ။ သုိ့ ေသာ္ ထုိ loop ကုိ control လုပ္နုိင္မည့္ <code>break</code>, <code>next</code> နွင့္ <code>redo</code> keyword မ်ားလည္းရွိပါသည္။ <code>break</code> keyword သည္ loop ကုိ ရပ္သြားေစမည့္ keyword ျဖစ္ျပီး <code>next</code> keyword ကေတာ့ လက္ရွိအျကိမ္ ေက်ာ္ ၍ ေနာက္တစ္ေက်ာ့ကုိ skip လုပ္မည့္ keyword ျဖစ္သည္။ <code>redo</code> ကေတာ့ လက္ ရွိအေက်ာ့ကုိ ထပ္ေက်ာ့ လုပ္ေစမည့္ keyword ျဖစ္သည္။ ၎ keyword မ်ား ျဖင့္ တြဲသုံးပါက loop statement သည္ လည္း အစြမ္းထက္ေသာ control structure တစ္ခု ျဖစ္လာပါသည္။</p>
+
+<!-- more -->
+
+
+<h4><code>while</code> loop</h4>
+
+<p>   <code>while</code> statement ကေတာ့ အျခား language မ်ား နွင့္ထပ္တူျဖစ္သည္။ <code>while</code> keyword ေနာက္ တြင္ ေပးထားေသာ အေျခအေန တစ္ခု ေျပလည္ေနသ၍ looping ပတ္ေပးမည့္ statement ျဖစ္သည္။ ဥပမာ-
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;while Statement&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">4</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  puts i</span>
+</span><span class='line'><span class="sr">  i += 1</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါကုတ္ သည္ ေအာက္ပါအတုိင္း ထြက္လာမည္ျဖစ္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   1
+</span><span class='line'>   2
+</span><span class='line'>   3&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">=</span>&amp;gt; nil
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4><code>until</code> loop</h4>
+
+<p>   <code>until</code>statement သည္ while statement နွင့္ ေရးသားပုံျခင္းတူျပီး while ၏ ဆန့္က်င္ဘက္ ျဖစ္သည္။ <code>until</code> loop ၏ အသုံးျပု ပုံ မွာ <code>until</code> ေနာက္တြင္ ေပးထားေသာ conditional မေျပ လည္ေသးသ၍ျပ ုလုပ္မည္ျဖစ္ျပီး ေျပလည္သြားသည့္အခ်ိန္တြင္ ျပုလုပ္ေတာ့မည္ မဟုတ္ေပ။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;until Statement&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">until</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  puts i</span>
+</span><span class='line'><span class="sr">  i += 1</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါကုတ္ သည္ ေအာက္ပါအတုိင္း ထြက္လာမည္ျဖစ္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   1
+</span><span class='line'>   2
+</span><span class='line'>   3
+</span><span class='line'>   4&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">=</span>&amp;gt; nil
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<code>until</code> နွင့္ <code>while</code> မွာ <code>if</code> နွင့္ <code>unless</code> ကဲ့သုိ့ပင္ ျဖစ္သည္။ ၎တုိ့ ကုိ one line loop မ်ား အျဖစ္ တစ္ေျကာင္းပုံစံျဖင့္လည္းေရးနုိင္သည္။ဥ ပမာ <code>puts i while i &gt; 4</code> , <code>puts i until i &lt; 4</code> စသျဖင့္ ပုံစံမ် ိ ုးလည္း သုံးလုိ့ရသည္။ ရူဘီ တြင္ <code>do while</code> statement မရွိေပ။ <code>do while</code> ကဲ့ သုိ့ အနည္းဆုံးတစ္ျကိမ္ လုပ္ေစလုိ ေသာ loop မ် ိ ုးတြင္ loop instruction အား <code>begin</code> နွင့္ <code>end</code> keyword မ်ား အတြင္း ၌ ထည့္ေပးရသည္။ ဥပမာ
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;do while style Statement&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>   <span class="n">i</span><span class="o">=</span><span class="mi">11</span>
+</span><span class='line'>   <span class="k">begin</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt; print &quot;</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="sr"> &quot;</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   i+=1</span>
+</span><span class='line'><span class="sr">   end while i &amp;lt; 10</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါကုတ္တြင္ begin end အတြင္းမွ expression သည္ အနည္းဆုံး တစ္ျကိမ္ အလုပ္လုပ္ မည္ ျဖစ္ျပီး ေအာက္ပါအတုိင္း ထြက္လာမည္ျဖစ္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   <span class="nv">11</span>  <span class="o">=</span>&gt;  nil
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4><code>for in</code> loop</h4>
+
+<p>   <code>for in</code> loop သည္ iterator ပုံစံမ်ိ  ုးသုံးရေသာ loop ျဖစ္သည္။ ဒုတိယ အမ် ိ ုးအစား loop အတြင္း ၌ ပါ၀င္ေသာ္လည္း loop structure သက္သက္ ပုံစံမ် ိ ုးျဖစ္၍ ဤ ေနရာတြင္ ေဖာ္ျပလုိက္ပါသည္။ <code>for</code> keyword ေနာက္ တြင္ မိမိ ထားလုိသည့္ variable ကုိထား ၍ <code>in</code> keyword ေနာက္တြင္ မိမိ ပတ္လုိသည္ ့ collection ကုိ ထည့္ေပးရသည္။ ဥပမာ Range object တစ္ခု ျဖစ္ေသာ <code>1..4</code> ကို ပတ္လုိသည္ ဆုိပါစို့ ။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;for in Statement&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>   <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">4</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt; puts i</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါအတုိင္း <code>for in</code> loop ကုိသုံးနုိင္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   1
+</span><span class='line'>   2
+</span><span class='line'>   3
+</span><span class='line'>   4&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">=</span>&amp;gt; nil
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+   အထက္ပါ looping control statement မ်ား အားလုံး တြင္ <code>break</code> , <code>next</code>, <code>redo</code> နွင့္ <code>retry</code> keyword မ်ားကုိ သုံးနုိင္ပါသည္။ ရူဘီ သည္ ျပသနာတစ္ခုကုိ နည္းလမ္းမ်ိ  ုးစုံ နွင့္ ေျဖရွင္းနုိင္ေသာ language တစ္ခု ျဖစ္ပါသည္။ အမွန္အကန္ဆုံးနည္း ဟူ၍ မရွိပါ။ မိမိ အဆင္ေျပသလို ယူသုံးယုံပင္ျဖစ္သည္။ ရူဘီသည္ code ၏ ေဖာ္ျပနုိင္စြမ္းကို အဓိကထားသည္ျဖစ္ရာ <code>while</code> loop ကုိ not conditional မ်ိ  ုး နွင့္ သုံးျခင္းထက္ <code>until</code> loopကုိ သုံးျခင္းမ်ိ  ုးကုိ ပုိမုိ အားေပးပါသည္။
+  ပုံမွန္ ျက ုံေတြ့  ေနရေသာ ျပသနာမ်ား တြင္ data collection မ်ားကုိ ကုိင္တြယ္ျပင္ဆင္ရေသာ အေျခအေနမ်ိ  ုးက မ်ားေလ့ရွိပါသည္။ ထုိအေျခအေနမ်ား အတြက္ ဒုတိယအမ်ိ  ုးအစား loop မ်ားက ပုိ မုိ အသုံး၀င္ပါသည္။ထုိ ကဲ့ သုိ့ looping မ်ားအတြက္ ရူဘီ standard library အတြင္း iterator ပုံစံ method မ်ား စြာ ထည့္သြင္းေပးထားပါသည္။ ထုိ method မ်ား သည္ ရူဘီ ၏ <code>block</code> ,<code>proc</code> နွင့္ <code>lambda</code> object မ်ား ၏ သဘာ၀ကုိ အေျခခံထားပါသည္။ ဤေနရာတြင္ ၎တုိ့ အေျကာင္းကုိ အျကမ္းမွ်သာ ရွင္းျပီး အသုံးမ်ားေသာ iterator method မ်ားကုိ ေဖာ္ျပသြားပါမည္။</p>
+
+<h4><code>each</code> method</h4>
+
+<p>   iterator မ်ား အနက္ အသုံး၀င္ဆုံး method မွာ <code>each</code> method ျဖစ္သည္။ <code>each</code> method သည္ Enumerable module ၏ method တစ္ခုျဖစ္သည္။ Array, Hash အစရွိေသာ collection object မ်ားတြင္ ထည့္သြင္းေပးထားပါသည္။ <code>each</code> method ကုိ ေခါ္လုိလွ်င္ collection object ျဖင့္ ေခါ္၍ parameter အျဖစ္ block တစ္ခု ေပးရပါသည္။ ရူဘီ တြင္ block ဆုိသည္မွာ execute ျပု လုပ္နုိင္ေသာ ကုတ္အပိုင္းအစတစ္ခု ျဖစ္သည္။ ထူးျခားခ်က္မွာ ထုိ ကုတ္အပိုင္းအစကို method မ်ားတြင္ parameter အျဖစ္ ေပးနုိင္ျခင္းျဖစ္သည္။ဥပမာ Array တစ္ခုကုိ <code>each</code> method အသုံးျပ ု ၍ iterate လုပ္လုိသည္ဆုိပါစို့ &hellip;
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;each method&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>   <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;puts i</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါကုတ္ တြင္ <code>[1,2,3,4]</code> သည္ Array တစ္ခုျဖစ္ျပီး  ထုိ Array ေပါ္တြင္ .each ဟူ၍ <code>each</code> method ကုိ ေခါ္လုိက္သည္။ ထုိ့ေနာက္ ၎ <code>each</code> method အား <code>do</code> နွင့္ <code>end</code> နွစ္ခုအျကားတြင္ ကုတ္အပိုင္းအစ တစ္ခု အား block အျဖစ္ parameter ေပးလုိက္ျခင္းျဖစ္သည္။ block တစ္ခု အား <code>do</code> ,<code>end</code> keyword နွစ္ခု အျကားတြင္ ကုတ္ အပိုင္းအစကုိ ေရးျခင္းျဖင့္လည္းေကာင္း၊ <code>{</code>,<code>}</code> တြန့္ကြင္း နွစ္ခု အျကားတြင္ ကုတ္အပိုင္းအစေရးျခင္းျဖင့္ လည္းေကာင္း ေဖာ္ျပနုိင္သည္။ ဤ ေနရာ တြင္ <code>do</code> , <code>end</code> ပုံစံကုိ သုံးထားျခင္းျဖစ္သည္။ <code>do</code> ၏ ေနာက္ကပ္ရပ္တြင္ <code>|</code> character နွစ္ခု အျကား ေရးထားေသာ <code>i</code> သည္ ထုိ ကုတ္အပိုင္းအစ အတြက္ parameter တစ္ခု ျဖစ္သည္။ (~ block အေျကာင္းကုိ သက္ဆုိင္ရာ ေခါင္းစဥ္ေအာက္တြင္အေသးစိတ္ထပ္မံရွင္းသြားပါမည္။)
+<code>each</code> method ၏ အလုပ္လုပ္ပုံမွာ Collection အတြင္းမွ item တစ္ခုခ်င္းစီကုိ ေပးထားသည့္ block အား parameter အျဖစ္ ေပး၍ execute လုပ္ ေစျခင္း ျဖစ္သည္။ <code>for in</code> loop နွင့္ အလုပ္လုပ္ပုံျခင္းဆင္တူျဖစ္သည္။ ထုိ့ေျကာင့္ Array အတြင္း တြင္ item 3 ခု ရွိပါက item တစ္ခုခ်င္းစီကုိ parameter အျဖစ္သုံး၍ block အတြင္းမွ ကုတ္အပိုင္းအစကုိ သုံးခါ အလုပ္လုပ္သြားမည္ျဖစ္သည္။
+အထက္ပါ ဥပမာ တြင္ Array item မ်ားျဖစ္ေသာ <code>1</code>,<code>2</code>,<code>3</code>,<code>4</code>တုိ့ကုိ သုံး၍ တစ္ခု ခ်င္းစီကုိ <code>i</code> အျဖစ္ျဖင့္ <code>puts i</code> statement ကုိ အလုပ္လုပ္သြားျပီး ေအာက္ပါအတုိင္း ထြက္လာမည္ျဖစ္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   1
+</span><span class='line'>   2
+</span><span class='line'>   3
+</span><span class='line'>   4&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">=</span>&amp;gt; nil
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+   <code>each</code> method သည္ အလြန္အသုံး၀င္ေသာ method တစ္ခုျဖစ္ပါသည္။ ထုိ့ အျပင္ <code>each</code> method သုံးထားေသာ ကုတ္ကုိ ျကည့္ပါ။ <code>[1,2,3,4].each</code>  english ဘာသာျဖင့္  ၁ ၂ ၃ ၄ တစ္ခုခ်င္းစီကုိ ဟု ေရးထား ျခင္းပင္ ျဖစ္သည္။ ထုိ့ေျကာင့္ each method သည္ ဘာလုပ္မည္ ျဖစ္ေျကာင္းကုိ ရွင္းရွင္းလင္းလင္းေဖာ္ျပထားျပီးသားျဖစ္သည္။ ထုိ့ အျပင္ ကြ်န္ေတာ္တုိ့ သည္ each ဟုေျပာလုိက္ခ်င္းအားျဖင့္ တစ္ခုခ်င္းစီ မွန္း သိျပီးသားျဖစ္သည္။ ကြ်န္ေတာ္တုိ့ အသုံးျပု လုိေသာ collection တြင္ item ဘယ္နွစ္ခု ပါေျကာင္း ကုိ ကြ်န္ေတာ္တုိ့ သိဖုိ့ မလုိ အပ္ေပ။<code>my_array.each</code> ဟု ဆုိလုိက္သည္နွင္ ့ <code>my_array</code> အတြင္းမွ item တစ္ခုခ်င္းစီကုိ သုံးမည္မွန္းသိျပီးသားျဖစ္သည္။ <code>my_array</code> တြင္ item မည္မ်ွ ပါသည္ကုိ သိစရာမလုိေပ။ <code>my_array</code> မွာ item 5 ခု ပါလည္း ဤကုတ္ က မွန္ေနျပီး 10 ခု ပါလည္း မွန္ေနမည္သာျဖစ္သည္။ <code>my_array</code> ၏ item အေရအတြက္ကဲ့ သုိ့ မလုိအပ္ေသာ အခ်က္အလက္မ်ားအား ကြ်န္ေတာ္တုိ့ မွတ္ထားစရာမလုိေတာ့ေပ။ ထုိ့အျပင္ <code>my_array</code> ၏ item အေရအတြက္ ေျပာင္းလဲခဲ့ လွ်င္ ပင္ ကြ်န္ေတာတုိ့ ကုတ္ က မွန္ေနမည္ ျဖစ္ျပီး ကြ်န္ေတာ္တုိ့ ျပု ုလုပ္လုိေသာ အရာကုိ က်စ္က်စ္လ်စ္လ်စ္ ျဖင့္ ေဖာ္ျပနုိင္ျခင္းသည္က ပင္ ရူဘီ ၏ စြမ္းအားျဖစ္ေပသည္။</p>
+
+<h4><code>times</code> method</h4>
+
+<p>   <code>each</code> ကဲ့သုိ့ အသုံး၀င္ျပီး က်စ္လ်စ္ေသာ ေနာက္ ထပ္ method တစ္ခုမွာ <code>times</code> method ျဖစ္သည္။ <code>times</code> method မွာ 1,2,3.. အစရွိေသာ နံပါတ္ object မ်ားအတြင္း ထည့္သြင္းေပးထားေသာ method ျဖစ္သည္။ ၎၏ english အဓိပ္ပါယ္ အတိုင္း  ဘယ္နွျကိမ္ ဟူေသာ အဓိပ္ပါယ္မ်ိ  ုးျဖစ္သည္။ ဥပမာ <code>4.times</code> ဆုိ လွ်င္ ၄ ျကိမ္၊ <code>5.times</code> ဆုိလွ်င္ ၅ ျကိမ္ အစရွိသျဖင့္ အျကိမ္အေရအတြက္ အတိအက် ပတ္လုိ ေသာ loop structure မ်ားတြင္ အသုံးျပု သည္။ ၎ သည္ လည္း <code>each</code> method ကဲ့သို့  block တစ္ခုကို parameter အျဖစ္ လက္ခံျပီး ထုိ block ကုိ သတ္မွတ္ထားေသာအျကိမ္အေရအတြက္ အတုိင္း execute လုပ္ျခင္းျဖစ္သည္။ <code>times</code> method အတြက္ block parameter သည္ optional ျဖစ္သည္။ parameter ထည့္ေပးခဲ့လွ်င္ ထုိ parameter အတြင္း loop counter ကုိ ထည့္၍ ကုတ္အပိုင္းအစကုိ execute လုပ္သြားမည္ျဖစ္သည္။ သတိထားရမည္မွာ loop counter မွာ 0 မွ စတင္ျခင္းျဖစ္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;times method&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span> <span class="n">i</span> <span class="o">|&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  puts i</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   0
+</span><span class='line'>   1
+</span><span class='line'>   2&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">=</span>&amp;gt; 3
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4><code>upto</code> method</h4>
+
+<p>   <code>upto</code> သည္ လည္း <code>times</code> ကဲ့ သုိ့ ပင္ နံပါတ္ object မ်ားျဖင့္သုံးရေသာ method ျဖစ္သည္။ <code>upto</code> က ေနာက္ထပ္ parameter တစ္ခု ပုိလုိသည္။ မည္ ၍ မည္မွ် အထိ ဟူ သည့္ parameter ျဖစ္သည္။ ဥပမာ <code>1.upto 10</code> ဆုိလွ်င္ 1 မွ 10 အထိ , <code>5.upto(10)</code> ဆိုလွ်င္ 5 မွ 10 အထိ (~ ၀ုိက္ကြင္းမွာ optional ျဖစ္သည္) စသျဖင့္ သုံးနုိင္သည္။ ၎ သည္ လည္း block တစ္ခု လုိပါသည္။ times ကဲ့သုိ့ပင္ block အတြက္ parameter မွာ optional ျဖစ္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;upto method&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="mi">3</span><span class="o">.</span><span class="n">upto</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span> <span class="n">i</span> <span class="o">|&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  puts i</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   3
+</span><span class='line'>   4
+</span><span class='line'>   5&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">=</span>&amp;gt; 3
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4><code>step</code> method</h4>
+
+<p>   <code>step</code> method သည္ loop counter step ကုိ 1 ထက္ပုိ ခ်င္ေသာ အခါ ၌ အသုံးက်ေသာ method တစ္ခုျဖစ္သည္။ <code>step</code> method အတြက္ parameter နွစ္ခု နွင့္ block တစ္ခု ေပးရပါသည္။ ပထမ parameter မွာ <code>upto</code> ကဲ့ သုိ့ မိမိ ပတ္ လုိသည္ အထိ နံပါတ္ကုိ ေပးရျပီး ဒုတိယ parameter မွာ မိမိ ေပါင္း လုိေသာ loop coutner step ကုိ ေပးရပါသည္။ အကယ္၍ loop တစ္ျကိမ္ လွ်င္ 2 ေပါင္း လုိ ပါ က ဒုတိယ parameter အား 2 ေပးရပါမည္။ ဥပမာ-
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;step method&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="mi">3</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span> <span class="n">i</span> <span class="o">|&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  puts i</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါကုတ္ တြင္  3 မွ ေန၍ 10 အထိ  တစ္ျကိမ္လ််ွင္ 5 စီ တုိးသြားေသာ loop ပတ္ထားျခင္း ျဖစ္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   3
+</span><span class='line'>   8&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">=</span>&amp;gt; 3
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<code>step</code> method မွာ အသုံးနည္းေသာ္လည္း တစ္ဆင့္ထက္ပုိေပါင္းေသာ loop မ်ားအတြက္ အလြယ္တကူ အသုံး ျပ ုနုိင္ေသာ method တစ္ခု ျဖစ္ပါသည္။</p>
+
+<h4><code>each_with_index</code> method</h4>
+
+<p>   ေနာက္ဆုံးအေန နွင့္ iterator method မ်ား ထဲမွ <code>each</code> နည္းတူ အသုံးမ်ားေသာ method တစ္ခု ကို ေဖာ္ျပခ်င္ပါသည္။ <code>each_with_index</code> method သည္ <code>each</code> method ၏ block တြင္ parameter တစ္ခု ပုိ လာ ေသာ မ် ိ ုးကြဲတစ္ခု ျဖစ္ပါသည္။ ကြ်န္ေတာ္တုိ့ collection မ်ား အသုံး ျပ ု ရာ တြင္ တစ္ခါတစ္ရံ collection item ကုိ သာ မက ၎ item ၏ index ကုိ ထည့္ သြင္း အသုံးျပ ု လုိ ေသာ အခါမ်ား ရွိတတ္ပါသည္။ ထုိ အခါမ်ားတြင္ လြန္စြာ အသုံး၀င္လာေသာ method တစ္ခု ျဖစ္ပါသည္။ ဥပမာ Array တစ္ခု အား item ေရာ index ပါ output ထုတ္လုိသည္ ဆုိပါစုိ့။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;each_with_index method&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>   <span class="o">[&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">a</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">b</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">c</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">].</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">value</span><span class="p">,</span><span class="n">index</span><span class="o">|&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  puts index</span>
+</span><span class='line'><span class="sr">  puts value</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<code>each</code> method တုန္းက ကြ်န္ေတာ္တုိ့ ၏ block တြင္ variable တစ္လုံးသာ ထည့္ေပးလုိက္ပါသည္။ ယခု <code>each_with_index</code> method တြင္ဒုတိယ variable တစ္လုံးပါလာျပီး ထုိ variable မွာ item တစ္ခုခ်င္းစီ ၏ index ကုိ ထည့္ေပးလုိက္ေသာ parameter တြင္ ျဖစ္သည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   0
+</span><span class='line'>   a
+</span><span class='line'>   1
+</span><span class='line'>   b
+</span><span class='line'>   2
+</span><span class='line'>   c&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">=</span>&amp;gt; <span class="o">[</span><span class="s2">&quot;a&quot;</span>, <span class="s2">&quot;b&quot;</span>, <span class="s2">&quot;c&quot;</span><span class="o">]</span>
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+   ရူဘီ ၏ collection iterator method မ်ား စြာ က်န္ပါေသးသည္။ သုိ့ေသာ္ ယခုေဖာ္ျပထားေသာ method မ်ားမွာ မျကာခဏ ျကုံေတြ့  အသုံးျပ ု ရ မည့္ method မ်ားျဖစ္ပါသည္။ ရူဘီ standard library ၏ <code>Enumerable</code> module တြင္ အသုံး၀င္ေသာ method မ်ားစြာ ရွိပါေသးသည္။ ၎တုိ့ကုိ အလ် ဥ္ းသင့္ လွ်င္ ထပ္မံေဖာ္ျပသြားပါမည္။</p>
+
+<p>ေရွ့ ေဆာင္းပါး : <a href="http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/">Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၁</a></p>
+
+<p>ဆက္ပါဦးမည္..</p>
+
+<p>ေက်းဇူးတင္ပါသည္</p>
+
+<p><em>dbc</em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby နွင့္ ေတြ့ ဆုံျခင္း ၁]]></title>
@@ -124,6 +514,8 @@ else ကုိျကားထဲတြင္ ျကုိက္သေလာက�
 <h3>Operators</h3>
 
 <p>  ရူဘီတြင္ အျခား language မ်ားတြင္သုံးေသာ operator အမ်ား စုကုိ အသုံးျပုနုိင္ပါသည္။ သုိ့ေသာ္ +,&ndash;,<em>,/ ,% စေသာ arithmatic operator မ်ားသည္ အမွန္တကယ္ေတာ့ method name မ်ားသာ ျဖစ္ပါသည္။ ထုိ operator မ်ား အား special method မ်ားအျဖစ္ သတ္မွတ္ထားျခင္းျဖစ္သည္။ ယင္းအေျကာင္းကုိ class နွင့္ object မ်ား အေျကာင္းတြင္ ထပ္မံ ရွင္းပါမည္။ ရူဘီ တြင္ and, or နွင့္ not နွစ္မ်ိ  ုး ေရးလုိ့ ရပါသည္။ <code>and</code>, <code>or</code> နွင့္ <code>not</code> ဟူ ၍ english စာလုံးအတုိင္းျဖစ္ေစ၊ <code>&amp;&amp;</code>,<code>||</code>  နွင့္ <code>!</code> ဟူ၍ sign နွင့္ျဖစ္ေစ ေရးနုိင္ပါသည္။၎ သုံးခုမွာ non-method operator မ်ား ျဖစ္၍ method တစ္ခုကဲ့ သုိ့  အသုံးျပု၍ မရနုိင္ပါ။ အျခား conditional operator မ်ားမွာ &ldquo;>, >= ,&lt;, &lt;=, ==, ===, !=&rdquo; စသည္ျဖင့္ ျဖစ္ပါသည္။ ၎ တုိ့မွာ method မ်ား  ျဖစ္၍  override လုပ္လုိ့ ရနုိင္ပါသည္။ assignment operator မွာ <code>=</code> ျဖစ္ျပီး <code>+=</code>,<code>-=</code>,<code>*=</code>,<code>/=</code> စသည့္ shortcut assignment မ်ားလည္းရွိပါသည္။ <code>-</code> နွင့္ <code>+</code> ကို unary တစ္လုံး operator မ်ား အျဖစ္လည္းသုံးနုိင္ပါသည္။ <code>++</code> နွင့္ <code>--</code> ကဲ့သုိ့ increment operator မရွိပါ။ ထူးျခားသည့္ operator အခ်ိ  ု့ မွာ namespace operator <code>::</code>, array subscript operator <code>[]</code> နွင့္  <code>&lt;&lt;</code> operator တုိ့ ျဖစ္သည္။ ၎တုိ့ ၏ အသုံးကုိ ဆီေလ်ာ္ရာ ေနရာတြင္ ထည့္သြင္းရွင္းျပသြားမည္ျဖစ္ပါသည္။ if-else conditional မ်ားကုိ ternary operator <code>? :</code> ျဖင့္လည္း ေရးနုိင္ပါသည္။ ဥပမာ <code>1===1 ? puts "one" : puts "two"</code> ပုံစံမ် ိ ုးျဖစ္သည္။ </em>,/ သည္ +,&ndash; ထက္ precedence ျမင့္ပါသည္။ Range operator မ်ား လည္းရွိပါသည္။ .. နွင့္ &hellip; မွာ range operator မ်ားျဖစ္သည္။ Range operator မ်ားသည္ ဂဏန္း နွစ္ခု အျကား အေရအတြက္ကုိ သတ္မွတ္ပါသည္။ ဥပမာ <code>1..10</code> သည္ 1 နွင့္ 10 ျကားမွ ဂဏန္း အားလုံးကို ရည္ညြွန္းပါသည္။ dot နွစ္လုံး <code>..</code>မွာ inclusive range operator ျဖစ္ျပီး <code>1..10</code> ဆုိပါက 10 ပါ အပါအ၀င္ ဆယ္လုံးျဖစ္သည္။ dot သုံးလုံး <code>...</code> ကေတာ့ non-inclusive ျဖစ္ျပီး <code>1...10</code> ဟုဆုိလွ်င္ 10 မပါ၀င္ဘဲ 1 to 9 ကုိ သာ ဆုိလုိပါသည္။ Range operator မ်ား မွာ looping statement မ်ား ေရးရာတြင္ အလြန္အသုံး၀င္ေသာ operator မ်ား ျဖစ္သည္။</p>
+
+<p>ေနာက္ေဆာင္းပါး : <a href="http://dreamingblackcat.github.io/blog/2014/05/20/meet-ruby-2/">Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၂</a></p>
 
 <p>ဆက္ပါဦးမည္..</p>
 

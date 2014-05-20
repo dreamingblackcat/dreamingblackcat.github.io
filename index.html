@@ -9,7 +9,7 @@
   <meta name="author" content="dbc">
 
   
-  <meta name="description" content="ကြ်န္ေတာ့္ ဘ၀ တြင္ Programming နွင့္ပတ္သက္၍ အျကီးမားဆုံး အေျပာင္း အလဲ နွစ္ခု ရွိပါသည္။ ပထမတစ္ခုမွာ ကြန္ပ်ူ တာ ပထမနွစ္တြင္ ေဒါက္တာေဒါ္အိအိလုွိင္ &hellip;">
+  <meta name="description" content="ျပီးခဲ့ ေသာ ေဆာင္းပါး တြင္ ရူဘီ language မိတ္ဆက္အျဖစ္ variable, types, condtionals စသည္တုိ့ အေျကာင္း ေရးခဲ့ပါသည္။ ဆက္လက္၍ looping structures မ်ား &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,67 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/20/meet-ruby-2/">Ruby နွင့္ ေတြ့ ဆုံျခင္း ၂</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-20T13:20:52+06:30" pubdate data-updated="true">May 20<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>ျပီးခဲ့ ေသာ <a href="http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/">ေဆာင္းပါး</a> တြင္ ရူဘီ language မိတ္ဆက္အျဖစ္ variable, types, condtionals စသည္တုိ့ အေျကာင္း ေရးခဲ့ပါသည္။ ဆက္လက္၍ looping structures မ်ား အေျကာင္း ေဖာ္ျပသြားပါမည္။</p>
+
+<h3>Looping Structures</h3>
+
+<p>   ပုံမွန္အားျဖင့္ programming basic တြင္ conditional မ်ား ျပီးသည္နွင့္ looping structure မ်ား လာရျမဲ ျဖစ္သည္။ သုိ့ ေသာ္ ရူဘီ တြင္ looping အသုံးျပု ပုံသည္ အျခား language မ်ားနွင့္ ျခားနားပါသည္။ Loop structure ကုိ သုံး ရန္ အေျကာင္းျပခ်က္ အျကမ္းအားျဖင့္ ၂ မ်ိ  ုး ရွိသည္ဟု ဆုိနုိင္ပါသည္။ တစ္မ် ိ ုး မွာ အျကိမ္ျကိမ္ အဖန္ဖန္ လုပ္ရေသာ အရာ မ်ား အတြက္ သုံးျခင္းျဖစ္ျပီး ေနာက္တစ္မ်ိ  ုးမွာေတာ့ collection ဟုေခါ္ေသာ data ကုိ အစုအေ၀း ျဖင့္ သိမ္းဆည္းသည့္ data structure မ်ားကုိ သုံးျခင္း၊ ျပင္ျခင္း၊ အသစ္ထည့္ျခင္း မ်ား ျပုလုပ္ရန္ျဖစ္သည္။ ရူဘီ တြင္ နွစ္မ်ိ  ုးလုံးအတြက္ loop structure မ်ား သီးသန့္ ရွိပါသည္။ ပထမတစ္မ်ိ  ုးတြင္ အက်  ုံး ၀င္ေသာ  looping မ်ား အတြက္ <code>loop</code>, <code>while</code>,<code>until</code> နွင့္ <code>for in</code> control structure မ်ား ရွိသည္။အရုိးရွင္းဆုံးမွာ <code>loop</code> statement ျဖစ္သည္။</p>
+
+<h4><code>loop</code> statement</h4>
+
+<p>   <code>loop</code> statement ကို အရုိးရွင္းဆုံး infinite loop တစ္ခုအတြက္သုံးနုိင္သည္။ဥပမာ</p>
+
+<figure class='code'><figcaption><span>&#8220;loop Statement&#8221; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>   <span class="kp">loop</span> <span class="k">do</span>
+</span><span class='line'>     <span class="nb">puts</span> <span class="s2">&quot;hello&quot;</span>
+</span><span class='line'>   <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>အထက္ပါ loop သည္ user က ctrl+c မနွိပ္မခ်င္း loop ပတ္ေနမည့္ infinite loop တစ္ခုျဖစ္သည္။ သူ့ခ်ညး္ သက္သက္ကေတာ့ သိပ္အသုံးမ၀င္ ပါ။ သုိ့ ေသာ္ ထုိ loop ကုိ control လုပ္နုိင္မည့္ <code>break</code>, <code>next</code> နွင့္ <code>redo</code> keyword မ်ားလည္းရွိပါသည္။ <code>break</code> keyword သည္ loop ကုိ ရပ္သြားေစမည့္ keyword ျဖစ္ျပီး <code>next</code> keyword ကေတာ့ လက္ရွိအျကိမ္ ေက်ာ္ ၍ ေနာက္တစ္ေက်ာ့ကုိ skip လုပ္မည့္ keyword ျဖစ္သည္။ <code>redo</code> ကေတာ့ လက္ ရွိအေက်ာ့ကုိ ထပ္ေက်ာ့ လုပ္ေစမည့္ keyword ျဖစ္သည္။ ၎ keyword မ်ား ျဖင့္ တြဲသုံးပါက loop statement သည္ လည္း အစြမ္းထက္ေသာ control structure တစ္ခု ျဖစ္လာပါသည္။</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/20/meet-ruby-2/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -163,6 +224,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/20/meet-ruby-2/">Ruby နွင့္ ေတြ့ ဆုံျခင္း ၂</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/05/19/meet-ruby/">Ruby နွင့္ ေတြ့ ဆုံျခင္း ၁</a>
