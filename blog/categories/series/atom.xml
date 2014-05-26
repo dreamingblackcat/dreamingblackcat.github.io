@@ -4,7 +4,7 @@
   <title><![CDATA[Category: series | Dreaming Black Cat]]></title>
   <link href="http://dreamingblackcat.github.io/blog/categories/series/atom.xml" rel="self"/>
   <link href="http://dreamingblackcat.github.io/"/>
-  <updated>2014-05-26T17:06:12+06:30</updated>
+  <updated>2014-05-26T17:25:40+06:30</updated>
   <id>http://dreamingblackcat.github.io/</id>
   <author>
     <name><![CDATA[dbc]]></name>
@@ -77,8 +77,9 @@
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;instantiating a new object of a class with initialize method&rdquo; </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Mg</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Hla</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-ဟု ေရးလုိက္ရုံပင္ျဖစ္သည္။ ဤ တြင္ <code>new</code> method တြင္ ေပးရေသာ parameter နွစ္လုံးသည္ <code>initialize</code> method မွ လုိ အပ္ေသာ parameter နွစ္လုံး အတုိင္းပင္ေပးရျခင္းျဖစ္သည္ ကုိ သတိခ်ပ္ရန္လုိပါသည္။အကယ္၍ <code>Person.new("Mg")</code> ဟူ၍ parameter တစ္လုံးသာ ေပးခဲ့ လွ်င္ အလုပ္လုပ္မည္မဟုတ္ပါ။ Wrong Argument error ဟု ေပါ္လာမည္ျဖစ္သည္။ ဤသည္ မွာ Ruby Method မ်ားသည္ ၎တုိ့ကုိ ေျကညာထားသည့္ method parity  ေခါ္ parameter အေရအတြက္ အတိအက် ျဖစ္ဖုိ့ လုိေသာ ေျကာင့္ျဖစ္ပါသည္။ ထုိသုိ့ တင္းက်ပ္ေသာ parameter မ်ား အစား ေလ်ာ့ရဲ ေသာ parameter မ်ား အျဖစ္ သုံးလုိပါက default parameter မ်ား အသုံးျပုနုိင္ပါသည္။ default parameter မ်ားမွာ မည္သည့္ parameter မွ မထည့္ ေပးလုိက္ပါက default အျဖစ္ ယူဆမည့္တန္ဖုိး တစ္ခုကုိ method definition သတ္မွတ္ခ်ိန္တြင္ ထည့္ေပးခဲ့ ရျခင္းျဖစ္ပါသည္။ ၎၏ အသုံးျပ ု ပုံ မွာ မိမိ default ေပးလုိေသာ paramter ေနာက္ တြင္ ေပးလုိေသာ value ကုိ တစ္ပါတည္း assign သတ္မွတ္ေပးလုိက္ရပါသည္။ဥပမာ
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>ဟု ေရးလုိက္ရုံပင္ျဖစ္သည္။ ဤ တြင္ <code>new</code> method တြင္ ေပးရေသာ parameter နွစ္လုံးသည္ <code>initialize</code> method မွ လုိ အပ္ေသာ parameter နွစ္လုံး အတုိင္းပင္ေပးရျခင္းျဖစ္သည္ ကုိ သတိခ်ပ္ရန္လုိပါသည္။အကယ္၍ <code>Person.new("Mg")</code> ဟူ၍ parameter တစ္လုံးသာ ေပးခဲ့ လွ်င္ အလုပ္လုပ္မည္မဟုတ္ပါ။ Wrong Argument error ဟု ေပါ္လာမည္ျဖစ္သည္။ ဤသည္ မွာ Ruby Method မ်ားသည္ ၎တုိ့ကုိ ေျကညာထားသည့္ method parity  ေခါ္ parameter အေရအတြက္ အတိအက် ျဖစ္ဖုိ့ လုိေသာ ေျကာင့္ျဖစ္ပါသည္။ ထုိသုိ့ တင္းက်ပ္ေသာ parameter မ်ား အစား ေလ်ာ့ရဲ ေသာ parameter မ်ား အျဖစ္ သုံးလုိပါက default parameter မ်ား အသုံးျပုနုိင္ပါသည္။ default parameter မ်ားမွာ မည္သည့္ parameter မွ မထည့္ ေပးလုိက္ပါက default အျဖစ္ ယူဆမည့္တန္ဖုိး တစ္ခုကုိ method definition သတ္မွတ္ခ်ိန္တြင္ ထည့္ေပးခဲ့ ရျခင္းျဖစ္ပါသည္။ ၎၏ အသုံးျပ ု ပုံ မွာ မိမိ default ေပးလုိေသာ parameter ေနာက္ တြင္ ေပးလုိေသာ value ကုိ တစ္ပါတည္း assign သတ္မွတ္ေပးလုိက္ရပါသည္။ဥပမာ
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;default parameters&rdquo; </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -104,7 +105,7 @@
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Circle</span> <span class="o">&gt;</span> <span class="no">Shape</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Circle</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">Shape</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="sr">&lt;p&gt;end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
