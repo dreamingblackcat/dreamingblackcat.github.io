@@ -1,0 +1,217 @@
+---
+layout: post
+title: "Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၃"
+date: 2014-05-26 09:58:44 +0630
+comments: true
+categories: ruby dev series
+---
+ျပီးခဲ့ ေသာ[ေဆာင္းပါး](http://dreamingblackcat.github.io/blog/2014/05/26/meet-ruby-2/)တြင္ Looping Structures မ်ားအတြက္ အသုံးျပ ုနုိင္သည့္ နည္းလမ္းမ်ားကုိ ေဖာ္ျပခဲ့ပါသည္။ ယခု ရူဘီ ၏ object-oriented programming စြမ္းအား ကုိ မိတ္ဆက္ရန္ အခ်ိန္တန္ျပီဟုထင္ပါသည္။
+
+###Class and Objects
+
+ရူဘီသည္  programming style တစ္မ်ိ  ုးထက္မက ေရးနုိင္ေသာ multi-paradign language တစ္ခုျဖစ္ပါသည္။ ၎တုိ့ ထဲတြင္ မွ object-oriented programming(OOP) ကုိ မ်ားစြာအသားေပးထားပါသည္။ သုိ့ေသာ္ Java ကဲ့ သုိ့ class အေျချပ ု OOP ပုံစံတစ္မ်ိ  ုးထဲေတာ့ မဟုတ္ပါ။ ရူဘီတြင္ အရာရာသည္ object ျဖစ္ပါသည္။ ယုတ္စြ အဆုံး 1 , 2, 3 အစရွိ interger literal မ်ား သည္ ပင္ object မ်ား ျဖစ္ပါသည္။ ရူဘီ တြင္ primitive data type ဟူ ၍ မရွိပါ။ ရူဘီ object မ်ား အခ်င္းခ်င္း method call မ်ား ျဖင့္ message မ်ား ပုိ့ ျခင္းအားျဖင့္ အလုပ္လုပ္ပါသည္။ ရူဘီ သည္ smalltalk ၏ object-based concept ကုိ အေျခခံ၍ တည္ေဆာက္ထားျခင္းျဖစ္ပါသည္။ ထုိ့ေျကာင့္ ရူဘီ ကုိ ထိထိေရာက္ေရာက္ အသုံးခ်လုိလွ်င္ ရူဘီ ၏ object model ကုိ ေတာ့ နားလည္ထားဖုိ့ လုိအပ္ပါသည္။ပထမဦးစြာ အျခား OOP language မ်ားကဲ့ သုိ ့ အသုံးျပ ုပုံကုိ ေဖာ္ျပပါမည္။
+
+ပုံမွန္ OOP ကဲ့ သုိ့ ပင္ ရူဘီ တြင္ class မ်ား ေျကညာနုိင္ပါသည္။ class တစ္ခု သည္ object တစ္ခု ေဆာက္ဖုိ့ အတြက္ blueprint တစ္ခု ျဖစ္သည္။ ရူဘီတြင္ class တစ္ခုကို `class` keyword ျဖင့္ တည္ေဆာက္ျပီး  `class` keyword ေနာက္တြင္ မိမိ ေျကညာလုိေသာ class နာမည္ကုိ ေရးရပါသည္။ ထုိ့ေနာက္ `end` keyword ျဖင့္ အဆုံးသတ္ေပးရပါသည္။ ထုိ `class` နွင့္ `end` keyword နွစ္ခုအျကားတြင္ေရးေသာ ကုတ္သည္ ထုိ class နွင့္သက္ဆုိင္ေသာ ကုတ္ပင္ျဖစ္ပါသည္။<!-- more -->ဥပမာ
+{% codeblock "defining a class" lang:ruby %}
+class Car
+
+end
+{% endcodeblock %}
+အထက္ပါကုတ္တြင္ `Car` ဟုေခါ္ေသာ class တစ္ခု ေျကညာလုိက္ပါသည္။ class အမည္မ်ားသည္ အျကီးစာလုံးျဖင့္ စရပါမည္။ ဤ သတ္မွတ္ခ်က္ မွာ `constant` မ်ားအတြက္ သတ္မွတ္ခ်က္ပင္ျဖစ္ပါသည္။ရူဘီတြင္ `constant` အားလုံးကုိ အျကီး စာလုံးျဖင့္ စေရးရပါသည္။ စင္စစ္အားျဖင့္ class အမည္မ်ား သည္ `constant` မ်ားသာ ျဖစ္ပါသည္။ အထက္ပါ `Car` class သည္ မည္သည့္ ကုတ္ မွ မပါေသာ class အခြံတစ္ခုသာ ျဖစ္ပါသည္။ class တစ္ခု ထဲ တြင္ member method မ်ား member variable မ်ား ပါ၀င္နုိင္ပါသည္။ 
+{% codeblock "defining a class" lang:ruby %}
+class Car
+   def drive
+      puts "I am driving"
+   end
+end
+{% endcodeblock %}
+အထက္ပါကုတ္တြင္ Car class အတြင္းသုိ့ member method တစ္ခု ထည့္ သြင္းလုိက္ပါသည္။ ထုိ Car class ကုိ အသုံးျပ ု၍ object တစ္ခု တည္ေဆာက္လုိပါက `new` method ကုိ အသုံးျပု ရပါသည္။ `Car.new` ဟုဆုိလွ်င္ Car object တစ္ခုတည္ေဆာက္လုိက္ျခင္းပင္ျဖစ္သည္။ `new` method သည္ object instance တစ္ခု တည္ေဆာက္ေသာ method ပင္ ျဖစ္ပါသည္။ ရူဘီ တြင္ object instantiate လုပ္ ပုံ မွာ ပုံ မွန္ OOP language မ်ား နွင့္ ကြဲျပားပါသည္။ ရူဘီအတြက္ class အမည္ နွင့္ထပ္ တူ constructor method မ် ိ ုး မလုိအပ္ပါ။ထုိ သုိ့ constructor ပုံစံအတုိင္း အသုံးျပ ုနုိင္ ရန္ အထူး method တစ္ခု ရွိပါသည္။ ထုိ method မွာ `initialize` method ျဖစ္ပါသည္။ ရူဘီတြင္ `Car.new` စသျဖင့္ object တစ္ခုတည္ေဆာက္လုိက္သည္နွင့္ ၎ object ၏ class defintion တြင္ initialize method ရွိမရွိ စစ္ေဆးျပီး ရွိခဲ့ ပါ က ထုိ method ကုိ invoke လုပ္ပါသည္။ မွတ္ ရမည့္တစ္ခ်က္ မွာ`initialize` method သည္ constructor မဟုတ္ ပါ ။ Object constructor မွာ ရူဘီ မွ class အားလုံးအတြက္ အလုိအေလ်ာက္ေပးထားေသာ new method ျဖစ္သည္။ `initialize` method မွာ `new` ေခါ္ သည္ ့ အခ်ိန္ တြင္ dynamically ခ်ိတ္ဆက္ေပးေသာ hook method တစ္ခုသာ ျဖစ္ပါသည္။သို့ရာတြင္ `initialize` method အား constructor method တစ္ခု ကဲ့ သုိ့ အသုံးျပ ု၍ object member variable မ်ား ေျကညာနုိင္ပါသည္။ဥပမာ `Person` class တစ္ခုတည္ေဆာက္ျကည့္ပါမည္။ ၎ class တြင္ `first_name` နွင့္ `last_name` member variable နွစ္ခု ပါမည္ ဆုိပါစုိ့ ။
+{% codeblock "a class with initialize method" lang:ruby %}
+class Person
+   def initialize(f_name,l_name)
+      @first_name = f_name
+      @last_name = l_name
+   end
+end
+{% endcodeblock %}
+အထက္ပါ ပုံစံ သည္ Member variable ၂ လုံးပါေသာ class တစ္ခုေဆာက္လုိက္ျခင္းပင္ ျဖစ္ပါသည္။၎ class ကုိ instantiate လုပ္မည္ဆုိပါက
+{% codeblock "instantiating a new object of a class with initialize method" lang:ruby %}
+person = Person.new("Mg","Hla")
+{% endcodeblock %}
+ဟု ေရးလုိက္ရုံပင္ျဖစ္သည္။ ဤ တြင္ `new` method တြင္ ေပးရေသာ parameter နွစ္လုံးသည္ `initialize` method မွ လုိ အပ္ေသာ parameter နွစ္လုံး အတုိင္းပင္ေပးရျခင္းျဖစ္သည္ ကုိ သတိခ်ပ္ရန္လုိပါသည္။အကယ္၍ `Person.new("Mg")` ဟူ၍ parameter တစ္လုံးသာ ေပးခဲ့ လွ်င္ အလုပ္လုပ္မည္မဟုတ္ပါ။ Wrong Argument error ဟု ေပါ္လာမည္ျဖစ္သည္။ ဤသည္ မွာ Ruby Method မ်ားသည္ ၎တုိ့ကုိ ေျကညာထားသည့္ method parity ဟုတ္ ေခါ္ parameter အေရအတြက္ အတိအက် ျဖစ္ဖုိ့ လုိေသာ ေျကာင့္ျဖစ္ပါသည္။ ထုိသုိ့ တင္းက်ပ္ေသာ parameter မ်ား အစား ေလ်ာ့ရဲ ေသာ parameter မ်ား အျဖစ္ သုံးလုိပါက default parameter မ်ား အသုံးျပုနုိင္ပါသည္။ default parameter မ်ားမွာ မည္သည့္ parameter မွ မထည့္ ေပးလုိက္ပါက default အျဖစ္ ယူဆမည့္တန္ဖုိး တစ္ခုကုိ method definition သတ္မွတ္ခ်ိန္တြင္ ထည့္ေပးခဲ့ ရျခင္းျဖစ္ပါသည္။ ၎၏ အသုံးျပ ု ပုံ မွာ မိမိ default ေပးလုိေသာ paramter ေနာက္ တြင္ ေပးလုိေသာ value ကုိ တစ္ပါတည္း assign သတ္မွတ္ေပးလုိက္ရပါသည္။ဥပမာ
+{% codeblock "default parameters" lang:ruby %}
+def initialize(f_name = "Shwe",l_name= "Ba")
+    @first_name = f_name
+    @last_name = l_name
+end
+{% endcodeblock %}
+ထုိသုိ့ default parameter အသုံးျပု လိုက္ပါက `Person.new` ဟု မည္သည့္ parameter မွ မပါပဲ ေခါ္လ်ွင္လဲ default parameter မ်ား ကုိ အသုံးျပ ု၍ object တည္ေဆာက္သြားမည္ျဖစ္ပါသည္။မွတ္ရန္တစ္ခ်က္မွာ ဤ နည္းသည္ method parity check ကုိ ေက်ာ္လွြားလုိက္ျခင္းမဟုတ္ပါ။ ရွိျပီးသား parameter မ်ားမွ တစ္ခ်ိ  ု့ သုိ့မဟုတ္ အားလုံးကုိ သာ optional ျဖစ္ေအာင္ လုပ္လုိက္ျခင္းျဖစ္သည္။မူလ parameter အားလုံးထက္ပုိေပး၍ method ကုိ ေခါ္ျကည့္ ပါ က wrong argument error တက္ဦးမည္သာ ျဖစ္ပါသည္။
+
+#### Inheritance
+
+OOP ျဖင့္ ေရးရေသာ language အားလုံးတြင္ inheritance ကေတာ့ ပါျကသည္ခ်ည္းပင္ျဖစ္ပါသည္။ ရူဘီ၏ inheritance မွာ Java ကဲ့သုိ့ single inheritance ျဖစ္သည္။ ရူဘီတြင္ class တစ္ခုသည္ အျခား class တစ္ခုတည္းဆီ မွ သာ inherit လုပ္လုိ့ ရပါသည္။ multiple inheritance ကုိ support မေပးပါ။ ရူဘီ ၏ inheritance syntax မွာ မိမိ inherit လုပ္လုိေသာ base class ကုိ မိမိ class ေျကညာ ခ်က္ ေနာက္တြင္ `<` sign ျဖင့္ တြဲေရးလုိက္ရုံသာျဖစ္ပါသည္။ဥပမာ `Circle` class သည္ `Shape` class အား inherit လုပ္လုိသည္ဆုိပါစုိ့ ။ 
+{% codeblock "default parameters" lang:ruby %}
+class Circle > Shape
+
+end
+{% endcodeblock %}
+အထက္ပါကုတ္အတိုင္းေရးလိုက္ရုံသာျဖစ္ပါသည္။ Inherit လုပ္ထားေသာ child class သည္ parent class ၏ method မ်ား၊ member variable မ်ား အား အေမြ ဆက္ခံရရွိပါသည္။ အကယ္၍ parent class ၏ method တစ္ခုကို override လုပ္လုိပါက child class တြင္ ထုိ method implementation code ကုိ ထည့္ေရးလုိက္ပါက parent class ၏ method အား override လုပ္ျပီးသားျဖစ္ပါသည္။ အကယ္၍ မူလ parent method ကုိ overriden method အတြင္း ေခါ္လုိပါကလည္း `super` keyword ျဖင့္ ေခါ္နုိင္ပါသည္။ Java,C# အစရွိေသာ OOP language မ်ား တြင္ multiple inheritance ပုံစံအသုံးျပ ုလုိပါက Interface မ်ား သုံးျကပါသည္။ ရူဘီ တြင္ Interface မရွိပါ။ သုိ့ေသာ္ interface မ်ား၏ functionality အျပင္ အျခား စြမ္းေဆာင္ရည္မ်ားပါ၀င္ေသာ`module` မ်ား ရွိပါသည္။ `module` မ်ား အေျကာင္းကုိ module အေျကာင္းေရာက္ မွ ဆက္လက္ရွင္းသြားပါမည္။
+{% codeblock "Method Overriding" lang:ruby %}
+class Shape
+   def draw
+      puts "I am a shape"
+   end
+end
+
+class Circle < Shape
+   def draw
+      super
+      puts "And I am circle"
+   end
+end
+Circle.new.draw
+{%endcodeblock %}
+{% codeblock "Output" lang:sh %}
+I am a shape
+And I am circle
+ => nil 
+{% endcodeblock %}
+အထက္ပါ ဥပမာ တြင္ မူရင္း Shape class ၏ draw method ကုိ child class ျဖစ္ေသာ Circle တြင္ override လုပ္ထားပါသည္။ ထုိ့ေနာက္ `Circle.new` ျဖင့္ Circle object တစ္ခု တည္ေဆာက္၍ ထုိ objectအေပါ္တြင္ `draw` method ကုိ ေခါ္လိုက္ပါသည္။ ဤ ေနရာတြင္ `super` keyword ကုိ အသုံးျပ ုျပီး မူလ class ၏ method ကုိ ေခါ္ထားပါသည္။ 
+
+
+####Access Modifier
+
+Access Modifier သတ္မွတ္ျခင္း သည္ OOP တြင္ Data နွင့္ interface ကုိ ခြဲျခားျခင္း (Encapsulation) အတြက္ အေရးပါေသာ ဂုဏ္ရည္ တစ္ခု ျဖစ္ပါသည္။ ရူဘီ တြင္ variable မ်ား နွင့္ method မ်ား ၏ scope ကုိ သတ္မွတ္ ရန္ access modifier keyword သုံးမ် ိ ုး ရွိပါသည္။ ၎တုိ့မွာ `public`, `private` နွင့္ `protected` တို့ ျဖစ္သည္။ `public` variable မ်ား နွင့္ method မ်ားအား မည္သူမဆုိ access လုပ္လုိ့ရပါသည္။ ရူဘီ တြင္ Method အားလုံးအတြက္ default modifier မွာ `public` ျဖစ္ပါသည္။ @ နွင့္စေသာ instance variable အားလုံး အတြက္ modifier မွာ အျမဲတမ္း `private` ျဖစ္ျပီး မည္သူမွ် မျပင္နုိင္ပါ။ ထုိ့ေျကာင့္ class တစ္ခု ၏ member variable တစ္လုံးကို အသုံးျပုလုိပါ က method မ်ားကတစ္ဆင့္သာ အသုံးျပ ုနုိင္ပါသည္။`private` member မ်ားသည္ ၎တုိ့အား ေျကညာထားေသာ class အတြင္းမွ တစ္ပါး အျခား မည္သည့္ေနရာတြင္ မွ access လုပ္၍ မရပါ။ `protected` modifier ျဖင့္သတ္မွတ္ထားေသာ method မ်ားမွာမူ မူလ class နွင့္ ၎ ၏ child class မ်ား၊ သို့မဟုတ္ မူလ class ၏ အျခားေသာ instance object တစ္ခု  အစရွိသည္တုိ့ သာ access လုပ္၍ ရပါသည္။ method မ်ား အား access modifier မ်ား အသုံးျပု လုိပါက နွစ္မ်ိ  ုး အသုံးျပ ုနုိင္ပါသည္။ ပထမတစ္မ်ိ  ုးမွာ  method deinition အေရွ့ တြင္ `public`, `protected`, `private` အစရွိေသာ modifier keyword မ်ား ေျကညာရပါသည္။ဥပမာ
+{% codeblock "access modifier keywords" lang:ruby %}
+class Person
+public
+   def first_name
+
+   end 
+
+   def last_name
+
+   end
+
+private
+   def secret_short_name
+
+   end
+
+   def secret_nick_name
+
+   end
+proctected
+   def middle_short_name
+
+   end
+
+   def middle_name
+
+   end
+end
+{% endcodeblock %}
+အထက္ပါကုတ္တြင္ `public` keyword ေအာက္မွ method အားလုံးသည္ public method မ်ား၊ `private` keyword ေအာက္မွ method မ်ား သည္ private method မ်ား ၊ `protected` keyword ေအာက္မွ method မ်ားသည္ protected method မ်ား အသီးသီးျဖစ္ျကပါသည္။ ဒုတိယ တစ္မ် ိ ုးမွာ `public`,`private`, `protected` အစရွိေသာ built-in access control function မ်ားသုံးျခင္းျဖစ္သည္။ ၎ function မ်ား ေနာက္ တြင္ မိမိ access modifier သတ္မွတ္ လုိေသာ method အမည္မ်ားကုိ symbol အျဖစ္ parameter ေပးလုိက္ရပါသည္။ ရူဘီ တြင္ symbol ဆုိသည္ မွာ `:` ျဖင့္ စေသာ နာမည္မ်ား ကုိ ဆုိလုိပါသည္။ method နာမည္မ်ား hash key မ်ား အတြက္ symbol မ်ားကုိ သုံးပါသည္။ Symbol မ်ား အေျကာင္း ကုိ သက္ဆုိင္ရာ ေခါင္းစဥ္ ေအာက္တြင္အေသးစိတ္ရွင္းသြားပါမည္။
+{% codeblock "access modifier functions" lang:ruby %}
+class Person
+   def first_name
+
+   end 
+
+   def last_name
+
+   end
+   def secret_short_name
+
+   end
+
+   def secret_nick_name
+
+   end
+
+   def middle_short_name
+
+   end
+
+   def middle_name
+
+   end
+end
+   private :secret_nick_name,:secret_short_name
+   protected :middle_name,:middle_short_name
+end
+{% endcodeblock %}
+အထက္ပါ `Person` class သည္ ျပီးခဲ့ေသာ `Person` class နွင့္ အတူတူပင္ျဖစ္ပါသည္။ သုိ့ရာတြင္  access modifier keyword မ်ား အစား access modifier function မ်ားကုိ သုံးထားပါသည္။
+
+####Class level and Instance level variables, methods
+Variable မ်ား အေျကာင္းေျပာခဲ့စဥ္က`@` ျဖင့္စေသာ instance variable မ်ား နွင့္  `@@` ျဖင့္ စေသာ class variable မ်ားရွိေျကာင္း မိတ္ဆက္ခဲ့ပါသည္။ ယခုအက်ယ္ထပ္ရွင္းပါမည္။ instance variable မ်ားသည္ object တစ္ခု instantiate လုပ္ မွ ထုိ object အတြက္ တည္ေဆာက္ေသာ variable မ်ားျဖစ္ပါသည္။ ထုိ့ေျကာင့္ `ClassName.new` ပုံစံျဖင့္ တည္ေဆာက္မထားမခ်င္း အသက္၀င္ တည္ရွိေသးမည္ မဟုတ္ပါ။ class variable မ်ား မွာ class တစ္ခုလုံးနွင့္ သက္ဆုိင္ေသာ `Singleton` ဟုေခါ္ေသာ တစ္ခုတည္းတည္ရွိသည့္ variable မ်ား ျဖစ္ပါသည္။ဥပမာ
+{% codeblock "Class variables" lang:ruby %}
+class BlueCar
+   @@color = "blue"
+   def show_color
+      puts @@color
+   end
+   def change_color(color)
+      @@color = color
+   end
+end
+
+car1 = BlueCar.new
+car1.show_color
+car1.change_color("red")
+car2 = BlueCar.new
+car2.show_color
+car2.change_color("green")
+car1.show_color
+car2.show_color
+{%endcodeblock%}
+
+{%codeblock "Output" lang:sh%}
+1.9.3-p448 :082 > 
+1.9.3-p448 :083 >   car1 = BlueCar.new
+ => #<BlueCar:0x994385c> 
+1.9.3-p448 :084 > car1.show_color
+blue
+ => nil 
+1.9.3-p448 :085 > car1.change_color("red")
+ => "red" 
+1.9.3-p448 :086 > car2 = BlueCar.new
+ => #<BlueCar:0x992936c> 
+1.9.3-p448 :087 > car2.show_color
+red
+ => nil 
+1.9.3-p448 :088 > car2.change_color("green")
+ => "green" 
+1.9.3-p448 :089 > car1.show_color
+green
+ => nil 
+1.9.3-p448 :090 > car2.show_color
+green
+ => nil 
+{%endcodeblock%}
+
+အထက္ပါကုတ္တြင္ class variable `@@color` အား car1 နွင့္ car2 တစ္ခုခုမွ ေျပာင္းလဲလုိက္ပါက က်န္သည့္ object မ်ား အတြက္ ပါ ေျပာင္းလဲသြားေျကာင္းေတြ့နုိင္ပါသည္။
+
+variable ကဲ့သုိ့ ပင္ method မ်ားတြင္လည္း class method နွင့္ instance method နွစ္မ်ိ  ုးရွိပါသည္။ သေဘာတရားမွာ အတူတူပင္ျဖစ္ပါသည္။ instance method မ်ားသည္ `ClassName.new` ပုံစံျဖင့္ object တည္ေဆာက္ျပီးမွ ထုိ object အေပါ္တြင္ `.` sign အား အသုံးျပ ု၍ ေခါ္ရေသာ method မ်ားျဖစ္ပါသည္။ class method မ်ားမွာ ေယဘုယ် generic method မ်ားျဖစ္ျပီး Object တစ္ခု ခ်င္းစီနွင့္ မသက္ဆုိင္ေသာ ကုတ္မ်ား ကုိ ထည့္သြင္းနုိင္ရန္ ထားေပးထားျခင္းျဖစ္သည္။ class method မ်ားကုိ တည္ေဆာက္လုိလွ်င္ method name ၏ ေရွ့ တြင္ `self` keyword ကုိ ထည့္ေပးရျပီး ၎တုိ့ကုိ အသုံးျပ ုလုိပါက `ClassName.method_name` ပုံစံျဖင့္ class အမည္ကုိ တုိက္ရုိက္အသုံးျပု ၍ ေခါ္ရပါသည္။ ဥပမာ
+{%codeblock "Class methods" lang:ruby%}
+class ComputerStudent
+   def self.school_name
+      puts "UCSY"
+   end
+end
+ComputerStudent.school_name
+{%endcodeblock%}
+{%codeblock "Class methods" lang;ruby%}
+1.9.3-p448 :096 > ComputerStudent.school_name
+UCSY
+ => nil 
+{%endcodeblock%}
+အထက္ပါ ကုတ္ တြင္ `ComputerStudent` class အတြက္ class level method တစ္ခု ေျကညာလုိက္ပါသည္။ ေက်ာင္း၏နာမည္သည္ ေက်ာင္းသားတစ္ေယာက္ခ်င္းစီနွင့္ မသက္ဆုိင္ပဲ ေက်ာင္းတစ္ခုလုံးနွင့္သာ သက္ဆုိင္သည့္ အတြက္ ၎ကုိ class method ျဖင့္ ေျကညာပါသည္။ ထုိ့ေျကာင့္ ေက်ာင္းနာမည္ကုိ သိရွိလုိပါက ေက်ာင္းသား object တစ္ခုတည္ေဆာက္စရာမလုိပဲ`ComputerStudent.school_name` ဟု class method ကုိ လွမ္းေခါ္လုိက္ရုံျဖင့္ output ထုတ္ေပးသြားမည္ျဖစ္သည္။ထုိ့ေျကာင့္ class method မ်ားအား object တစ္ခုေျကညာစရာ မလုိသည့္ တစ္နည္းအားျဖင့္ object member variable မ်ားကုိ အသုံးျပု စရာမလုိသည့္ ေယဘုယ် အေျခအေနမ်ား အတြက္ အသုံးျပ ုနုိင္ပါသည္။
+
+ဆက္ပါဦးမည္..
+
+ေက်းဇူးတင္ပါသည္
+
+*dbc*
+
+ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၂](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby-2/)

@@ -168,10 +168,15 @@ categories: ruby dev series
 {% endcodeblock %}
    ရူဘီ ၏ collection iterator method မ်ား စြာ က်န္ပါေသးသည္။ သုိ့ေသာ္ ယခုေဖာ္ျပထားေသာ method မ်ားမွာ မျကာခဏ ျကုံေတြ့  အသုံးျပ ု ရ မည့္ method မ်ားျဖစ္ပါသည္။ ရူဘီ standard library ၏ `Enumerable` module တြင္ အသုံး၀င္ေသာ method မ်ားစြာ ရွိပါေသးသည္။ ၎တုိ့ကုိ အလ် ဥ္ းသင့္ လွ်င္ ထပ္မံေဖာ္ျပသြားပါမည္။
 
-ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၁](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)
-
 ဆက္ပါဦးမည္..
 
 ေက်းဇူးတင္ပါသည္
 
 *dbc*
+
+ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၁](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)
+
+ေနာက္ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၃](http://dreamingblackcat.github.io/blog/2014/05/20/meet-ruby-3/)
+
+
+

@@ -24,6 +24,16 @@ categories: ruby dev series
 ###Hello World
   Programming Language မ်ား ေလ့လာရာတြင္ Hello World program ျဖင့္ စတင္ျခင္းသည္ ထုံး စံ တစ္ခု လုိပင္ ျဖစ္ေနပါျပီ။ ရူဘီ အတြက္ Hello World မွာ အလြန္ လြယ္ကူ ပါသည္။ `puts "Hello World"` ဆုိလွ်င္ ့ Hello World ထုတ္ေပးေသာ program တစ္ခု ျဖစ္ပါျပီ။ puts သည္ console ကုိ print ထုတ္ေပးေသာ system function တစ္ခု ျဖစ္သည္။ ေနာက္ က "Hello World" ဟူေသာ string ထည့္ေပးလုိက္ေသာအခါ console ေပါ္ တြင္ output ထြက္လာပါသည္။ ~ `puts` သည္ အလုိအေလ်ာက္ ေနာက္ တစ္လုိင္း ဆင္းေပးပါသည္။'\n' သတ္သတ္ထည့္ေပးစရာမလုိပါ။
 
+(EDIT: 26-May-2014, ပထမအျကိမ္ ဤ ေဆာင္းပါးေရးစဥ္က Ruby Comments နွင့္ Constant မ်ား အေျကာင္းက်န္ခဲ့ ၍ ထပ္ျဖည့္ထားပါသည္။ )
+ 
+###Comments
+ရူဘီ တြင္ source ကုတ္ အတြင္း commentေပးလိုပါက `#` sign ျဖင့္ စေပးရပါသည္။`#` ျဖင့္စထားေသာေနရာမွစ၍ ထုိ တစ္လုိင္းလုံးကုိ comment အျဖစ္သတ္မွတ္ျပီး execute လုပ္ရာတြင္ လ်စ္လ်ူ ရွုသြားမည္ျဖစ္ပါသည္။ ရူဘီတြင္ inline comment  ပုံစံမရွိပါ။
+
+###Constants
+ရူဘီ တြင္ constant မ်ား အားလုံးကို  English  Capital Letter ျဖင့္ စေရးေလ့ရွိပါသည္။ class name, module name အစရွိေသာ constant မ်ားကုိ အစစာလုံးသာ အျကီးထားေလ့ရွိျပီး  တန္ဖုိး constant မ်ားကုိ ေတာ့ ALL_CAPITAL ပုံစံျဖင့္ ေရးေလ့ရွိပါသည္။
+
+(END EDIT:)
+
 ###Methods or Functions
   ရူဘီ method တစ္ခု ကုိ `def` နွင့္ `end` keyword နွစ္ခုျဖင့္ သတ္မွတ္ပါသည္။ 
 {% codeblock  "ruby" lang:ruby %}
@@ -66,3 +76,5 @@ else ကုိျကားထဲတြင္ ျကုိက္သေလာက�
 ေက်းဇူးတင္ပါသည္
 
 *dbc*
+
+ေနာက္ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၂](http://dreamingblackcat.github.io/blog/2014/05/20/meet-ruby-2/)

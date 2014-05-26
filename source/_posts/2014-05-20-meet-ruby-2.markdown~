@@ -18,6 +18,7 @@ categories: ruby dev series
    end
 {% endcodeblock %}
 အထက္ပါ loop သည္ user က ctrl+c မနွိပ္မခ်င္း loop ပတ္ေနမည့္ infinite loop တစ္ခုျဖစ္သည္။ သူ့ခ်ညး္ သက္သက္ကေတာ့ သိပ္အသုံးမ၀င္ ပါ။ သုိ့ ေသာ္ ထုိ loop ကုိ control လုပ္နုိင္မည့္ `break`, `next` နွင့္ `redo` keyword မ်ားလည္းရွိပါသည္။ `break` keyword သည္ loop ကုိ ရပ္သြားေစမည့္ keyword ျဖစ္ျပီး `next` keyword ကေတာ့ လက္ရွိအျကိမ္ ေက်ာ္ ၍ ေနာက္တစ္ေက်ာ့ကုိ skip လုပ္မည့္ keyword ျဖစ္သည္။ `redo` ကေတာ့ လက္ ရွိအေက်ာ့ကုိ ထပ္ေက်ာ့ လုပ္ေစမည့္ keyword ျဖစ္သည္။ ၎ keyword မ်ား ျဖင့္ တြဲသုံးပါက loop statement သည္ လည္း အစြမ္းထက္ေသာ control structure တစ္ခု ျဖစ္လာပါသည္။
+<!-- more -->
 
 ####`while` loop
    `while` statement ကေတာ့ အျခား language မ်ား နွင့္ထပ္တူျဖစ္သည္။ `while` keyword ေနာက္ တြင္ ေပးထားေသာ အေျခအေန တစ္ခု ေျပလည္ေနသ၍ looping ပတ္ေပးမည့္ statement ျဖစ္သည္။ ဥပမာ-
@@ -167,9 +168,13 @@ categories: ruby dev series
 {% endcodeblock %}
    ရူဘီ ၏ collection iterator method မ်ား စြာ က်န္ပါေသးသည္။ သုိ့ေသာ္ ယခုေဖာ္ျပထားေသာ method မ်ားမွာ မျကာခဏ ျကုံေတြ့  အသုံးျပ ု ရ မည့္ method မ်ားျဖစ္ပါသည္။ ရူဘီ standard library ၏ `Enumerable` module တြင္ အသုံး၀င္ေသာ method မ်ားစြာ ရွိပါေသးသည္။ ၎တုိ့ကုိ အလ် ဥ္ းသင့္ လွ်င္ ထပ္မံေဖာ္ျပသြားပါမည္။
 
+ဆက္ပါဦးမည္..
+
 ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၁](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)
 
-ဆက္ပါဦးမည္..
+ေနာက္ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၃](http://dreamingblackcat.github.io/blog/2014/05/20/meet-ruby-3/)
+
+
 
 ေက်းဇူးတင္ပါသည္
 
