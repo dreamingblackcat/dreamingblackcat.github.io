@@ -1,0 +1,198 @@
+---
+layout: post
+title: "Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၄"
+date: 2014-06-05 12:01:50 +0630
+comments: true
+categories: ruby dev series
+---
+
+ျပီးခဲ့ ေသာ[ေဆာင္းပါး](http://dreamingblackcat.github.io/blog/2014/05/26/meet-ruby-3/) တြင္ ရူဘီ ၏ အေျခခံ OOP feature မ်ားကုိ ေဖာ္ျပခဲ့ ပါသည္။ ရူဘီသည္ ယခင္ေဆာင္းပါးမ်ားတြင္ ေရးခဲ့သည့္အတုိင္း Object မ်ား ကုိ အသုံးျပု ၍ ဖြဲ့ စည္းတည္ေဆာက္ထားေသာ language တစ္ခုျဖစ္ပါသည္။ Java အစရွိေသာ language မ်ားကဲ့ သုိ့ primitive data type မ်ားကုိ အေျခခံ၍ object မ်ား တည္ေဆာက္ေရးသားျခင္းမဟုတ္ပဲ။ Number နွင့္ String ကဲ့ သုိ့ primitive data type မ်ားသည္ ပင္လွ်င္ Object မ်ား အျဖစ္ဖြဲ့ စည္းတည္ေဆာက္ထားျခင္းျဖစ္ပါသည္။ ထုိ့ေျကာင့္ ရူဘီ ၏ OOP ကုိ နားလည္လုိပါ က ရူဘီ language အတြင္း object မ်ား အခ်င္းခ်င္း မည္သုိ့ မည္ပုံ သက္ေရာက္ဆက္နြယ္ေနသည္ ကုိ သိထားဖုိ့ လိုအပ္ပါသည္။
+
+### Basic Object နွင့္ Object ေဆြစဥ္မ်ိ  ုးဆက္
+  ရူဘီ တြင္ အရာရာသည္ BasicObject ဟုေခါ္ေသာ object တစ္ခုကို အေျခခံျပီးတည္ေဆာက္ထားပါသည္။ ၎ BasicObject တြင္ object မ်ား အား တည္ေဆာက္၊ ရွင္းလင္း၊ ျပုျပင္ေျပာင္းလဲ၊ အသုံးခ်ေစနုိင္မည့္ အနည္းဆုံးလုိအပ္ေသာ feature အားလုံးကုိ ထည့္သြင္းထားပါသည္။ ထုိ object မွတစ္ဆင့္ အျခားေသာ language feature မ်ား အတြက္ inheritance ကုိ အသုံးခ် ၍ ျဖစ္ေစ၊ အျခားနည္းမ်ားျဖင့္ ျဖစ္ေစ  object မ်ား အဆင့္အဆင့္ တည္ေဆာက္သြားျခင္းျဖစ္သည္။** (မွတ္ခ်က္။ ။ ရူဘီ အတြင္းပုိင္း object မ်ား၏ အလုပ္လုပ္ပုံသည္ အဓိက ရူဘီ ဗားရွင္း ျကီး မ်ားတြင္ အေျပာင္းအလဲမ်ားရွိျကပါသည္။ ဤ ေဆာင္းပါးသည္ ရူဘီ ဗားရွင္း 1.9.3 အား အသုံးျပုထားပါသည္။)**
+
+  `BasicObject` ၏အေျခခံ feature မ်ားကုိ inherit လုပ္၍ object မ်ားအား runtime တြင္ dynamic စီမံခန့္ခြဲေစနုိင္မည့္ feature မ်ားကုိ ထပ္ျဖည့္ထားေသာ object မွာ `Object` ျဖစ္သည္။ စင္စစ္အားျဖင့္ က်န္သည့္ ရူဘီ object အား လုံးသည္ `Object` object ၏ desendent object မ်ား သာ ျဖစ္ပါသည္။ထုိ့ေျကာင့္ `BasicObject` နွင့္ `Object` တုိ့သည္ ရူဘီ object မ်ား အားလုံး၏ အရင္းအျမစ္ျဖစ္ပါသည္။
+ထို object နွစ္ခု ေအာက္တြင္ `Module` object နွင့္ class-based OOP ကုိ အသုံးျပုေစနုိင္သည့္ `Class` object မ်ား အဆင့္ဆင့္ရွိျကပါသည္။ မွန္ပါသည္။ ရူဘီတြင္ class မ်ား ကုိယ္တုိင္က object ျဖစ္ပါသည္။ class keyword တစ္ခု အသုံးျပု ျပီး class အသစ္တစ္ခု ေျကညာျခင္းသည္ စင္စစ္အားျဖင့္ ေနာက္ကြယ္တြင္ Class object ၏ instance တစ္ခုတည္ေဆာက္လုိက္ျခင္းပင္ျဖစ္ပါသည္။
+{%codeblock "Object Hierarchy in Ruby" lang:ruby%}
+class One
+end
+
+class Two < One
+end
+
+class Three < Two
+end
+# Create ob as instance of class Three
+# and display the class name
+ob = Three.new
+x = ob.class
+puts( x )
+# now climb back through the hierarchy to
+# display all ancestor classes of ob
+begin
+x = x.superclass
+puts(x.inspect)
+end until x == nil
+
+{%endcodeblock%}
+
+{%codeblock "Output" lang:sh%}
+Two
+One
+Object
+BasicObject
+nil
+=> nil
+{%endcodeblock%}
+
+အထက္ပါ ကုတ္တြင္ class hierarchy အဆင့္ဆင့္ကုိ ေတြ့နုိင္ပါသည္။ ထူးျခားခ်က္မွာ `BasicObject` ၏ superclass သည္ nil ျဖစ္ပါသည္။ တစ္နည္းအားျဖင့္ BasicObject သည္ parent မရွိေသာ အေျခခံအက်ဆုံး object ပင္ျဖစ္ပါသည္။ `superclass` method သည္ BasicObject မွ ထည့္ေပးထားေသာ method တစ္ခုျဖစ္ျပီး object တစ္ခု၏ parent class ကုိ ေဖာ္ျပေပးပါသည္။ထုိ့ေျကာင့္ ရူဘီ တြင္ object instance အားလုံးသည္ `Object` ၏ descendent မ်ားသာ ျဖစ္ပါသည္။ထုိ့အတူ class မ်ား ကုိယ္တုိင္ကုိ လည္း `superclass` ေခါ္ျကည့္နုိင္ပါသည္။ 
+{%codeblock "Class Hierarchy in Ruby" lang:ruby%}
+class One
+end
+
+class Two < One
+end
+
+class Three < Two
+end
+x =Three.class
+begin
+
+puts(x.inspect)
+x = x.superclass
+end until x == nil
+
+{%endcodeblock%}
+
+{%codeblock "Output" lang:sh%}
+Class
+Module
+Object
+BasicObject
+=> nil
+
+{%endcodeblock%}
+
+ထုိ့ေျကာင့္ `One` , `Two` , `Three`  အစရွိေသာ class မ်ားသည္လည္း BasicObject မွဆင္းသက္လာေသာ object မ်ားသာ ျဖစ္ေျကာင္းေတြ့နုိင္ပါသည္။ `Class` နွင့္ `Module` object မ်ားသည္ အျခား object မ်ားကုိ တည္ေဆာက္ရန္ဖြဲ့စည္းထားေသာ အထူး object နွစ္မ် ိုးျဖစ္ပါသည္။ ထုိ အထူး object နွစ္မ် ိ ုးကုိ အသုံးျပု ၍ သာမန္ class-based OOP ပုံစံအတိုင္း object မ်ား တည္ေဆာက္အသုံးျပု ျခင္းျဖစ္ပါသည္။ စင္စစ္အား ျဖင့္ `One` , `Two` စသည္တုိ့သည္ `Class` class ၏ instance object မ်ား အား သိမ္းဆည္းထားေသာ constant မ်ားသာ ျဖစ္ပါသည္။ ထုိ့ေျကာင့္ `class` keyword ျဖင့္ အသုံးျပု ၍ class တစ္ခု ေျကညာအတိုင္း `Class` class ၏ instance object တစ္ခုတည္ေဆာက္ျပီး မိမိတုိ့ေပးလုိေသာ class အမည္ constant ျဖင့္ ၎ object ကုိ store လုပ္ထားျခင္းသာျဖစ္ပါသည္။ ဤ ေနရာတြင္ ထူးျခားခ်က္မွာ `Class` class ၏ class သည္ ၎ ကုိယ္တုိင္ပင္ ျဖစ္ပါသည္။ ဤမ်ွ ဆုိလ်ွင္ ရူဘီတြင္ အရာရာသည္ object ျဖစ္ေျကာင္း ျမင္နုိင္ျပီဟု ထင္ပါသည္။
+
+ထုိသုိ့ အရာရာ သည္ object မ်ား ျဖစ္သည့္ အားေလ်ာ္စြာ သာမန္ object မ်ားအား runtime တြင္ ျပု ျပင္ ေျပာင္းလဲသကဲ့သုိ့  `Class` object မ်ားအားလည္း runtime တြင္ ျပု ျပင္ေျပာင္းလဲနုိင္ပါသည္။ဤသည္ပင္ လွ်င္ ရူဘီ၏ dynamic ျဖစ္ေသာ စြမ္းအား အစစ္အမွန္ျဖစ္ပါသည္။
+
+### အပြင့္ class မ်ား
+
+  ရူဘီတြင္ object တစ္ခု၏ တန္ဖုိးကုိ အခ်ိန္မေရြး ျပင္ဆင္ထည့္သြင္းနုိင္ပါသည္။ class မ်ားသည္ လည္း object မ်ားျဖစ္ရာ class မ်ားကုိ လည္း အခ်ိန္မေရြးအလြယ္တကူ ျပင္ဆင္နုိင္ပါသည္။ထုိသုိ့ ျပင္ဆင္နုိင္ရန္လည္း BasicObject နွင့္ Object မ်ား တြင္ method မ်ား ထည့္သြင္းေပးထားပါသည္။ Java အစရွိေသာ Compiled OOP language မ်ားတြင္ class တစ္ခုအားေျကညာျပီး compile လုပ္ျပီးသြားသည္နွင့္ ၎ ေျကညာ ခ်က္သည္ အေသျဖစ္သည္။ ၎ class ၏ ဖြဲ့စည္းတည္ေဆာက္ပုံကုိ ျပန္ compile မလုပ္ ပဲ ျပင္ဆင္နုိင္ခြင့္မရွိေတာ့ပါ။ ရူဘီမွာ မူ class မ်ားသည္ အပြင့္ ျဖစ္ပါသည္။ မိမိနွစ္သက္ရာ method တစ္ခုအား class တစ္ခုအတြင္းသို့ အခ်ိန္မေရြး ထည့္သြင္းနုိင္ပါသည္။
+{%codeblock "Open Classes" lang:ruby%}
+class Person
+   def name
+      "John"
+   end 
+end
+ p = Person.new
+class Person
+   def email
+      "john@gmail.com"
+   end
+end
+puts p.name
+puts p.email
+{%endcodeblock%}
+အထက္ပါကုတ္ တြင္ ပထမဦးစြာ `Person` class တစ္ခု ေျကညာလုိက္ပါသည္။ ၎ `Person` class တြင္ `name` ဟူသည့္ method တစ္ခုသာ ပါပါသည္။ ထုိ့ေနာက္ ၎ `Person` instance တစ္ခု တည္ေဆာက္လုိက္ပါသည္။ထုိ့ေနာက္ ထပ္မံ၍ `Person` class ကုိ ေျကညာျပီး `email` method ကုိ ျဖည့္သြင္းပါသည္။ 
+{%codeblock "Output" lang:sh%}
+John
+john@gmail.com
+=> nil
+
+{%endcodeblock%}
+ရူဘီတြင္ class အားလုံးသည္ အပြင့္ class မ်ား ျဖစ္သျဖင့္ class definition အား တစ္ခုထက္ပုိ၍ ေျကညာေသာ္လည္း error မတက္ပါ။ ၎ `Person` class ၏ definition ကုိ သာ ထပ္မံ ျဖည့္သြင္းေသာ definition ျဖင့္ ျပင္ဆင္ျဖည့္သြင္းသြားမည္ျဖစ္ပါသည္။ ထုိ့ ေျကာင့္ `p` object သည္ မူလတည္ေဆာက္စဥ္က `email` method ကုိမသိခဲ့ ေသာ္ လည္း ထပ္မံေျကညာေသာ class definition အရ `email` method ကို သိရွိျပီး invoke လုပ္သြားျခင္းျဖစ္ပါသည္။
+
+အပြင့္ class မ်ား သည္ ရူဘီ ၏ အလြန္အေရးပါေသာ စြမ္းအားတစ္ခု ျဖစ္ပါသည္။ အပြင့္ method မ်ားကုိ အသုံးခ် ၍ မူလ built-in ပါ၀င္ေသာ standard lirbray မ်ားကုိ ပင္ ျပင္ ဆင္ ထည့္သြင္းနုိင္ပါသည္။ဥပမာ ရူဘီ၏ built-in `String` class အတြင္း သုိ့ မိမိဘာသာ method တစ္ခု ထည့္သြင္းလုိသည္ ဆုိပါစုိ့။ 
+{%codeblock "Monkey Patching" lang:ruby%}
+class String
+   def kill_command
+      puts( "Avada Cadabra" )
+   end
+end
+s = String.new
+s.kill_command
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+Avada Cadabra
+=> nil
+
+{%endcodeblock%}
+အထက္ပါ ကုတ္ ကဲ့ သုိ့ `String` class ကုိ ဖြင့္၍ မိမိထည့္သြင္းလုိေသာ method အား ထည့္သြင္းလိုက္ရုံပင္ ျဖစ္သည္။ ထုိသုိ့ မူလရွိျပီးသား class မ်ား အား ျပင္ဆင္ထည့္သြင္းျခင္း အား Monkey Patching ဟုတ္ေခါ္ပါသည္။ သတိျပုရန္တစ္ခ်က္မွာ Monkey Patching သည္ မူလ class မ်ားအား overwrite လုပ္ျခင္း ျဖစ္ရာ ဂရုမျပုမိပါက မလုိလားအပ္ေသာ ေဘးထြက္ ဆုိးက်ိ  ုးမ်ား ျဖစ္နုိင္ေျကာင္း ျဖစ္သည္။
+
+### Singleton method မ်ား
+
+အပြင့္ class မ်ားသည္ class တစ္ခု၏ ေဆာင္ရြက္နုိင္စြမ္းကို dynamically ျပု ျပင္နုိင္စြမ္းကုိေပးပါသည္။ သုိ့ေသာ္ တစ္ခါတစ္ရံ မိမိ ထပ္မံျဖည့္သြင္းလုိေသာ feature သည္ class တစ္ခုလုံးနွင့္ မသက္ဆုိင္ပဲ instance object တစ္ခုခုနွင့္ သာ သက္ဆုိင္ေနတတ္ျခင္းမ် ိ ုး ရွိတတ္ပါသည္။ ထုိ အခါမ် ိ ုး တြင္ Singleton method မ်ားကုိ အသုံးျပု နုိင္ပါသည္။
+{%codeblock "Person class" lang:ruby%}
+class Person
+   def initialize(name)
+      @name  = name
+   end
+   def name
+      @name
+   end
+end
+mgmg = Person.new("Mg Mg")
+spiderman = Person.new("Peter Parker")
+{%endcodeblock%}
+အထက္ပါ ကုတ္ Person class တစ္ခု ေျကညာျပီး Person instance နွစ္ခု တည္ေဆာက္လိုက္ပါသည္။ `spiderman` object ကုိသာ `super_power` method တစ္ခုထပ္ျဖည့္လုိသည္ဆုိပါစုိ့။ အကယ္၍ Person class ကုိ ထပ္ဖြင့္ ၍ `super_power` method ကုိ ထည့္သြင္းပါက `mgmg` object သည္ လည္း ၎ method ကုိ သိေနမည္ျဖစ္သည္။ ထုိ အခါမ် ိ ုး တြင္ `spiderman` instance အား method တစ္ခု ထပ္မံ ျဖည့္သြင္းနုိင္ပါသည္။
+{%codeblock "Adding a singleton method" lang:ruby%}
+def spiderman.super_power
+   puts "throw some web"
+end
+
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+1.9.3-p448 :018 >   spiderman.super_power
+throw some web
+ => nil 
+1.9.3-p448 :019 > mgmg.super_power
+NoMethodError: undefined method `super_power' for #<Person:0x8fa2334 @name="Mg Mg">
+{%endcodeblock%}
+အလားတူပင္ class keyword ကုိ အသုံးျပု ၍ လည္း ေျကညာနုိင္ပါသည္။ `class` keyword ကုိ သုံးလုိပါက `class` keyword ေနာက္တြင္ `<<` operator  နွင့္ မိမိ ထည့္သြင္းလုိေသာ object instance ကုိ အသုံးျပု ရပါသည္။
+{%codeblock "Adding a singleton method" lang:ruby%}
+spiderman = Person.new("Peter Parker")
+class << spiderman
+   def super_power
+      puts "jump around"
+   end
+end
+
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+1.9.3-p448 :018 >   spiderman.super_power
+jump around
+ => nil 
+1.9.3-p448 :019 > mgmg.super_power
+NoMethodError: undefined method `super_power' for #<Person:0x8fa2334 @name="Mg Mg">
+{%endcodeblock%}
+မည္သည့္နည္းကို အသုံးျပု ျပီး ေျကညာ သည္ ျဖစ္ေစ မိမိေျကညာလုိက္ေသာ method သည္ ၎ instance object အတြင္း singleton method တစ္ခု အျဖစ္ ၀င္ေရာက္သြားပါသည္။ object instance တစ္ခုတြင္ ရွိေသာ Singleton methods မ်ားကို သိလုိပါက "Object#singleton_methods" method ကုိ အသုံးျပု ၍ ျကည့္ရွုနုိင္ပါသည္။
+
+အပြင့္ class မ်ား နွင့္ Singleton method မ်ားသည္ ရူဘီ၏ ေျပာင္းလဲျပင္လြယ္ျဖစ္မွုကို ေဖာ္ျပပါသည္။ ထုိ့ေျကာင့္ ရူဘီ class တစ္ခု ကုိ ေနရာတစ္ေနရာ ထက္ပုိ ၍  ေျကညာအသုံးျပု နုိင္သလုိ runtime ေရာက္မွ အလ်ဥ္းသင့္ သလို method မ်ား ထည့္သြင္း အသုံးျပု နုိင္ပါသည္။ ထုိသုိ့ dynamicနည္းျဖင့္ ထိန္းခ်  ုပ္ ေရးသား ျခင္းကို Meta Programming ဟုေခါ္ျပီး Meta Programming သည္ အဆင့္ျမင့္ ရူဘီ ပရုိဂရမ္မ်ား ေရးသားရာ၌ တြင္က်ယ္စြာ အသုံးျပု ေသာ Programming Technique တစ္မ် ိ ုး ျဖစ္ပါသည္။ Meta Programming အေျကာင္းနွင့္ ပတ္သက္၍ အလ်င္းသင့္လွ်င္ ထပ္မံေဖာ္ျပသြားပါဦးမည္။
+
+### Class တစ္ခု အတြင္းရွိ Constant မ်ား
+
+ရူဘီ တြင္ class definition တစ္ခု အတြင္း၌ constant မ်ား ေျကညာနုိင္ပါသည္။ ထုိ constant မ်ားကုိ class အျပင္ မွ အသုံးခ်လုိပါက Scope Resolution Operator "::" ကုိ အသုံးျပု ၍ ေခါ္ယူနုိင္ပါသည္။ဥပမာ
+{%codeblock "Constant inside a class" lang:ruby%}
+class A
+SOME_CONST = 10
+end
+puts A::SOME_CONST
+
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+1.9.3-p448 :018 >puts A::SOME_CONST
+"10"
+=> nil
+{%endcodeblock%}
+
+class အမည္မ်ားသည္လည္း Constant မ်ား ျဖစ္ျပီး class တစ္ခုအား အျခား class တစ္ခုအတြင္း တြင္ ညွပ္ ၍ ေျကညာနုိင္ပါသည္။ ထုိသုိ့ေျကညာျခင္းအားျဖင့္ namespace အျဖစ္ အက် ိ ုးသက္ေရာက္ အသုံးျပုနုိင္ပါသည္။သို့ရာတြင္ Namespace ေပးျခင္းကုိ Module မ်ားျဖင့္ သာ Namespace ေပးျခင္းက ပုိအသုံးမ်ား ပါသည္။
+
+ဆက္ပါဦးမည္..
+
+ေက်းဇူးတင္ပါသည္
+
+*dbc*
+
+ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၃](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby-3/)
