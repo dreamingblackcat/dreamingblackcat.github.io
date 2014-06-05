@@ -4,7 +4,7 @@
   <title><![CDATA[Category: series | Dreaming Black Cat]]></title>
   <link href="http://dreamingblackcat.github.io/blog/categories/series/atom.xml" rel="self"/>
   <link href="http://dreamingblackcat.github.io/"/>
-  <updated>2014-06-02T16:03:13+06:30</updated>
+  <updated>2014-06-05T13:10:13+06:30</updated>
   <id>http://dreamingblackcat.github.io/</id>
   <author>
     <name><![CDATA[dbc]]></name>
@@ -12,6 +12,382 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၄]]></title>
+    <link href="http://dreamingblackcat.github.io/blog/2014/06/05/meet-ruby-4/"/>
+    <updated>2014-06-05T12:01:50+06:30</updated>
+    <id>http://dreamingblackcat.github.io/blog/2014/06/05/meet-ruby-4</id>
+    <content type="html"><![CDATA[<p>ျပီးခဲ့ ေသာ<a href="http://dreamingblackcat.github.io/blog/2014/05/26/meet-ruby-3/">ေဆာင္းပါး</a> တြင္ ရူဘီ ၏ အေျခခံ OOP feature မ်ားကုိ ေဖာ္ျပခဲ့ ပါသည္။ ရူဘီသည္ ယခင္ေဆာင္းပါးမ်ားတြင္ ေရးခဲ့သည့္အတုိင္း Object မ်ား ကုိ အသုံးျပု ၍ ဖြဲ့ စည္းတည္ေဆာက္ထားေသာ language တစ္ခုျဖစ္ပါသည္။ Java အစရွိေသာ language မ်ားကဲ့ သုိ့ primitive data type မ်ားကုိ အေျခခံ၍ object မ်ား တည္ေဆာက္ေရးသားျခင္းမဟုတ္ပဲ။ Number နွင့္ String ကဲ့ သုိ့ primitive data type မ်ားသည္ ပင္လွ်င္ Object မ်ား အျဖစ္ဖြဲ့ စည္းတည္ေဆာက္ထားျခင္းျဖစ္ပါသည္။ ထုိ့ေျကာင့္ ရူဘီ ၏ OOP ကုိ နားလည္လုိပါ က ရူဘီ language အတြင္း object မ်ား အခ်င္းခ်င္း မည္သုိ့ မည္ပုံ သက္ေရာက္ဆက္နြယ္ေနသည္ ကုိ သိထားဖုိ့ လိုအပ္ပါသည္။</p>
+
+<h3>Basic Object နွင့္ Object ေဆြစဥ္မ်ိ  ုးဆက္</h3>
+
+<p>  ရူဘီ တြင္ အရာရာသည္ BasicObject ဟုေခါ္ေသာ object တစ္ခုကို အေျခခံျပီးတည္ေဆာက္ထားပါသည္။ ၎ BasicObject တြင္ object မ်ား အား တည္ေဆာက္၊ ရွင္းလင္း၊ ျပုျပင္ေျပာင္းလဲ၊ အသုံးခ်ေစနုိင္မည့္ အနည္းဆုံးလုိအပ္ေသာ feature အားလုံးကုိ ထည့္သြင္းထားပါသည္။ ထုိ object မွတစ္ဆင့္ အျခားေသာ language feature မ်ား အတြက္ inheritance ကုိ အသုံးခ် ၍ ျဖစ္ေစ၊ အျခားနည္းမ်ားျဖင့္ ျဖစ္ေစ  object မ်ား အဆင့္အဆင့္ တည္ေဆာက္သြားျခင္းျဖစ္သည္။<strong> (မွတ္ခ်က္။ ။ ရူဘီ အတြင္းပုိင္း object မ်ား၏ အလုပ္လုပ္ပုံသည္ အဓိက ရူဘီ ဗားရွင္း ျကီး မ်ားတြင္ အေျပာင္းအလဲမ်ားရွိျကပါသည္။ ဤ ေဆာင္းပါးသည္ ရူဘီ ဗားရွင္း 1.9.3 အား အသုံးျပုထားပါသည္။)</strong></p>
+
+<p>  <code>BasicObject</code> ၏အေျခခံ feature မ်ားကုိ inherit လုပ္၍ object မ်ားအား runtime တြင္ dynamic စီမံခန့္ခြဲေစနုိင္မည့္ feature မ်ားကုိ ထပ္ျဖည့္ထားေသာ object မွာ <code>Object</code> ျဖစ္သည္။ စင္စစ္အားျဖင့္ က်န္သည့္ ရူဘီ object အား လုံးသည္ <code>Object</code> object ၏ desendent object မ်ား သာ ျဖစ္ပါသည္။ထုိ့ေျကာင့္ <code>BasicObject</code> နွင့္ <code>Object</code> တုိ့သည္ ရူဘီ object မ်ား အားလုံး၏ အရင္းအျမစ္ျဖစ္ပါသည္။
+ထို object နွစ္ခု ေအာက္တြင္ <code>Module</code> object နွင့္ class-based OOP ကုိ အသုံးျပုေစနုိင္သည့္ <code>Class</code> object မ်ား အဆင့္ဆင့္ရွိျကပါသည္။ မွန္ပါသည္။ ရူဘီတြင္ class မ်ား ကုိယ္တုိင္က object ျဖစ္ပါသည္။ class keyword တစ္ခု အသုံးျပု ျပီး class အသစ္တစ္ခု ေျကညာျခင္းသည္ စင္စစ္အားျဖင့္ ေနာက္ကြယ္တြင္ Class object ၏ instance တစ္ခုတည္ေဆာက္လုိက္ျခင္းပင္ျဖစ္ပါသည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Object Hierarchy in Ruby&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">One</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;class Two &amp;lt; One</span>
+</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">Three</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">Two</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;h1&gt;Create ob as instance of class Three&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="ow">and</span> <span class="nb">display</span> <span class="n">the</span> <span class="k">class</span> <span class="nb">name</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;ob = Three.new</span>
+</span><span class='line'><span class="sr">x = ob.class</span>
+</span><span class='line'><span class="sr">puts( x )&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">now</span> <span class="n">climb</span> <span class="n">back</span> <span class="n">through</span> <span class="n">the</span> <span class="n">hierarchy</span> <span class="n">to</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;h1&gt;display all ancestor classes of ob&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">begin</span>
+</span><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">superclass</span>
+</span><span class='line'><span class="nb">puts</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">inspect</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span> <span class="k">until</span> <span class="n">x</span> <span class="o">==</span> <span class="kp">nil</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>Two
+</span><span class='line'>One
+</span><span class='line'>Object
+</span><span class='line'>BasicObject
+</span><span class='line'><span class="nv">nil</span>
+</span><span class='line'><span class="o">=</span>&gt; nil
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>အထက္ပါ ကုတ္တြင္ class hierarchy အဆင့္ဆင့္ကုိ ေတြ့နုိင္ပါသည္။ ထူးျခားခ်က္မွာ <code>BasicObject</code> ၏ superclass သည္ nil ျဖစ္ပါသည္။ တစ္နည္းအားျဖင့္ BasicObject သည္ parent မရွိေသာ အေျခခံအက်ဆုံး object ပင္ျဖစ္ပါသည္။ <code>superclass</code> method သည္ BasicObject မွ ထည့္ေပးထားေသာ method တစ္ခုျဖစ္ျပီး object တစ္ခု၏ parent class ကုိ ေဖာ္ျပေပးပါသည္။ထုိ့ေျကာင့္ ရူဘီ တြင္ object instance အားလုံးသည္ <code>Object</code> ၏ descendent မ်ားသာ ျဖစ္ပါသည္။ထုိ့အတူ class မ်ား ကုိယ္တုိင္ကုိ လည္း <code>superclass</code> ေခါ္ျကည့္နုိင္ပါသည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Class Hierarchy in Ruby&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">One</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;class Two &amp;lt; One</span>
+</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">Three</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">Two</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">x</span> <span class="o">=</span><span class="no">Three</span><span class="o">.</span><span class="n">class</span>
+</span><span class='line'><span class="k">begin</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;puts(x.inspect)</span>
+</span><span class='line'><span class="sr">x = x.superclass</span>
+</span><span class='line'><span class="sr">end until x == nil&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>Class
+</span><span class='line'>Module
+</span><span class='line'>Object
+</span><span class='line'><span class="nv">BasicObject</span>
+</span><span class='line'><span class="o">=</span>&gt; nil&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>ထုိ့ေျကာင့္ <code>One</code> , <code>Two</code> , <code>Three</code>  အစရွိေသာ class မ်ားသည္လည္း BasicObject မွဆင္းသက္လာေသာ object မ်ားသာ ျဖစ္ေျကာင္းေတြ့နုိင္ပါသည္။ <code>Class</code> နွင့္ <code>Module</code> object မ်ားသည္ အျခား object မ်ားကုိ တည္ေဆာက္ရန္ဖြဲ့စည္းထားေသာ အထူး object နွစ္မ် ိုးျဖစ္ပါသည္။ ထုိ အထူး object နွစ္မ် ိ ုးကုိ အသုံးျပု ၍ သာမန္ class-based OOP ပုံစံအတိုင္း object မ်ား တည္ေဆာက္အသုံးျပု ျခင္းျဖစ္ပါသည္။ စင္စစ္အား ျဖင့္ <code>One</code> , <code>Two</code> စသည္တုိ့သည္ <code>Class</code> class ၏ instance object မ်ား အား သိမ္းဆည္းထားေသာ constant မ်ားသာ ျဖစ္ပါသည္။ ထုိ့ေျကာင့္ <code>class</code> keyword ျဖင့္ အသုံးျပု ၍ class တစ္ခု ေျကညာအတိုင္း <code>Class</code> class ၏ instance object တစ္ခုတည္ေဆာက္ျပီး မိမိတုိ့ေပးလုိေသာ class အမည္ constant ျဖင့္ ၎ object ကုိ store လုပ္ထားျခင္းသာျဖစ္ပါသည္။ ဤ ေနရာတြင္ ထူးျခားခ်က္မွာ <code>Class</code> class ၏ class သည္ ၎ ကုိယ္တုိင္ပင္ ျဖစ္ပါသည္။ ဤမ်ွ ဆုိလ်ွင္ ရူဘီတြင္ အရာရာသည္ object ျဖစ္ေျကာင္း ျမင္နုိင္ျပီဟု ထင္ပါသည္။</p>
+
+<p>ထုိသုိ့ အရာရာ သည္ object မ်ား ျဖစ္သည့္ အားေလ်ာ္စြာ သာမန္ object မ်ားအား runtime တြင္ ျပု ျပင္ ေျပာင္းလဲသကဲ့သုိ့  <code>Class</code> object မ်ားအားလည္း runtime တြင္ ျပု ျပင္ေျပာင္းလဲနုိင္ပါသည္။ဤသည္ပင္ လွ်င္ ရူဘီ၏ dynamic ျဖစ္ေသာ စြမ္းအား အစစ္အမွန္ျဖစ္ပါသည္။</p>
+
+<h3>အပြင့္ class မ်ား</h3>
+
+<p>  ရူဘီတြင္ object တစ္ခု၏ တန္ဖုိးကုိ အခ်ိန္မေရြး ျပင္ဆင္ထည့္သြင္းနုိင္ပါသည္။ class မ်ားသည္ လည္း object မ်ားျဖစ္ရာ class မ်ားကုိ လည္း အခ်ိန္မေရြးအလြယ္တကူ ျပင္ဆင္နုိင္ပါသည္။ထုိသုိ့ ျပင္ဆင္နုိင္ရန္လည္း BasicObject နွင့္ Object မ်ား တြင္ method မ်ား ထည့္သြင္းေပးထားပါသည္။ Java အစရွိေသာ Compiled OOP language မ်ားတြင္ class တစ္ခုအားေျကညာျပီး compile လုပ္ျပီးသြားသည္နွင့္ ၎ ေျကညာ ခ်က္သည္ အေသျဖစ္သည္။ ၎ class ၏ ဖြဲ့စည္းတည္ေဆာက္ပုံကုိ ျပန္ compile မလုပ္ ပဲ ျပင္ဆင္နုိင္ခြင့္မရွိေတာ့ပါ။ ရူဘီမွာ မူ class မ်ားသည္ အပြင့္ ျဖစ္ပါသည္။ မိမိနွစ္သက္ရာ method တစ္ခုအား class တစ္ခုအတြင္းသို့ အခ်ိန္မေရြး ထည့္သြင္းနုိင္ပါသည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Open Classes&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>   <span class="k">def</span> <span class="nf">name</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  &quot;John&quot;</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   end</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr"> p = Person.new</span>
+</span><span class='line'><span class="sr">class Person</span>
+</span><span class='line'><span class="sr">   def email&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>  <span class="s2">&quot;john@gmail.com&quot;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>   <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">puts</span> <span class="nb">p</span><span class="o">.</span><span class="n">name</span>
+</span><span class='line'><span class="nb">puts</span> <span class="nb">p</span><span class="o">.</span><span class="n">email</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါကုတ္ တြင္ ပထမဦးစြာ <code>Person</code> class တစ္ခု ေျကညာလုိက္ပါသည္။ ၎ <code>Person</code> class တြင္ <code>name</code> ဟူသည့္ method တစ္ခုသာ ပါပါသည္။ ထုိ့ေနာက္ ၎ <code>Person</code> instance တစ္ခု တည္ေဆာက္လုိက္ပါသည္။ထုိ့ေနာက္ ထပ္မံ၍ <code>Person</code> class ကုိ ေျကညာျပီး <code>email</code> method ကုိ ျဖည့္သြင္းပါသည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>John
+</span><span class='line'>&lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#x74;&amp;#111;&amp;#x3a;&amp;#x6a;&amp;#111;&amp;#104;&amp;#110;&amp;#64;&amp;#103;&amp;#x6d;&amp;#97;&amp;#105;&amp;#108;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;&quot;</span>&gt;&amp;#106;&amp;#111;&amp;#x68;&amp;#x6e;&amp;#64;&amp;#103;&amp;#x6d;&amp;#x61;&amp;#x69;&amp;#108;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
+</span><span class='line'><span class="o">=</span>&gt; nil&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+ရူဘီတြင္ class အားလုံးသည္ အပြင့္ class မ်ား ျဖစ္သျဖင့္ class definition အား တစ္ခုထက္ပုိ၍ ေျကညာေသာ္လည္း error မတက္ပါ။ ၎ <code>Person</code> class ၏ definition ကုိ သာ ထပ္မံ ျဖည့္သြင္းေသာ definition ျဖင့္ ျပင္ဆင္ျဖည့္သြင္းသြားမည္ျဖစ္ပါသည္။ ထုိ့ ေျကာင့္ <code>p</code> object သည္ မူလတည္ေဆာက္စဥ္က <code>email</code> method ကုိမသိခဲ့ ေသာ္ လည္း ထပ္မံေျကညာေသာ class definition အရ <code>email</code> method ကို သိရွိျပီး invoke လုပ္သြားျခင္းျဖစ္ပါသည္။</p>
+
+<p>အပြင့္ class မ်ား သည္ ရူဘီ ၏ အလြန္အေရးပါေသာ စြမ္းအားတစ္ခု ျဖစ္ပါသည္။ အပြင့္ method မ်ားကုိ အသုံးခ် ၍ မူလ built-in ပါ၀င္ေသာ standard lirbray မ်ားကုိ ပင္ ျပင္ ဆင္ ထည့္သြင္းနုိင္ပါသည္။ဥပမာ ရူဘီ၏ built-in <code>String</code> class အတြင္း သုိ့ မိမိဘာသာ method တစ္ခု ထည့္သြင္းလုိသည္ ဆုိပါစုိ့။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Monkey Patching&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">String</span>
+</span><span class='line'>   <span class="k">def</span> <span class="nf">kill_command</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  puts( &quot;Avada Cadabra&quot; )</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   end</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">s = String.new</span>
+</span><span class='line'><span class="sr">s.kill_command</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>Avada <span class="nv">Cadabra</span>
+</span><span class='line'><span class="o">=</span>&gt; nil&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါ ကုတ္ ကဲ့ သုိ့ <code>String</code> class ကုိ ဖြင့္၍ မိမိထည့္သြင္းလုိေသာ method အား ထည့္သြင္းလိုက္ရုံပင္ ျဖစ္သည္။ ထုိသုိ့ မူလရွိျပီးသား class မ်ား အား ျပင္ဆင္ထည့္သြင္းျခင္း အား Monkey Patching ဟုတ္ေခါ္ပါသည္။ သတိျပုရန္တစ္ခ်က္မွာ Monkey Patching သည္ မူလ class မ်ားအား overwrite လုပ္ျခင္း ျဖစ္ရာ ဂရုမျပုမိပါက မလုိလားအပ္ေသာ ေဘးထြက္ ဆုိးက်ိ  ုးမ်ား ျဖစ္နုိင္ေျကာင္း ျဖစ္သည္။</p>
+
+<h3>Singleton method မ်ား</h3>
+
+<p>အပြင့္ class မ်ားသည္ class တစ္ခု၏ ေဆာင္ရြက္နုိင္စြမ္းကို dynamically ျပု ျပင္နုိင္စြမ္းကုိေပးပါသည္။ သုိ့ေသာ္ တစ္ခါတစ္ရံ မိမိ ထပ္မံျဖည့္သြင္းလုိေသာ feature သည္ class တစ္ခုလုံးနွင့္ မသက္ဆုိင္ပဲ instance object တစ္ခုခုနွင့္ သာ သက္ဆုိင္ေနတတ္ျခင္းမ် ိ ုး ရွိတတ္ပါသည္။ ထုိ အခါမ် ိ ုး တြင္ Singleton method မ်ားကုိ အသုံးျပု နုိင္ပါသည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Person class&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  @name  = name</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   end</span>
+</span><span class='line'><span class="sr">   def name&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>  <span class="vi">@name</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>   <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">mgmg</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Mg</span> <span class="no">Mg</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
+</span><span class='line'><span class="n">spiderman</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Peter</span> <span class="no">Parker</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အထက္ပါ ကုတ္ Person class တစ္ခု ေျကညာျပီး Person instance နွစ္ခု တည္ေဆာက္လိုက္ပါသည္။ <code>spiderman</code> object ကုိသာ <code>super_power</code> method တစ္ခုထပ္ျဖည့္လုိသည္ဆုိပါစုိ့။ အကယ္၍ Person class ကုိ ထပ္ဖြင့္ ၍ <code>super_power</code> method ကုိ ထည့္သြင္းပါက <code>mgmg</code> object သည္ လည္း ၎ method ကုိ သိေနမည္ျဖစ္သည္။ ထုိ အခါမ် ိ ုး တြင္ <code>spiderman</code> instance အား method တစ္ခု ထပ္မံ ျဖည့္သြင္းနုိင္ပါသည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Adding a singleton method&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nc">spiderman</span><span class="o">.</span><span class="nf">super_power</span>
+</span><span class='line'>   <span class="nb">puts</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="kp">throw</span> <span class="n">some</span> <span class="n">web</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>1.9.3-p448 :018 &gt;   spiderman.super_power
+</span><span class='line'>throw some <span class="nv">web</span>
+</span><span class='line'> <span class="o">=</span>&gt; nil
+</span><span class='line'>1.9.3-p448 :019 &gt; mgmg.super_power
+</span><span class='line'>NoMethodError: undefined method &lt;code&gt;super_power<span class="err">&#39;</span> <span class="k">for</span> <span class="c">#&amp;lt;Person:0x8fa2334 @name=&quot;Mg Mg&quot;&amp;gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+အလားတူပင္ class keyword ကုိ အသုံးျပု ၍ လည္း ေျကညာနုိင္ပါသည္။</code>class<code>keyword ကုိ သုံးလုိပါက</code>class<code>keyword ေနာက္တြင္</code>&lt;&lt;` operator  နွင့္ မိမိ ထည့္သြင္းလုိေသာ object instance ကုိ အသုံးျပု ရပါသည္။
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Adding a singleton method&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">spiderman</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Peter</span> <span class="no">Parker</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
+</span><span class='line'><span class="k">class</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">spiderman</span>
+</span><span class='line'>   <span class="k">def</span> <span class="nf">super_power</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;  puts &quot;jump around&quot;</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   end</span>
+</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>1.9.3-p448 :018 &gt;   spiderman.super_power
+</span><span class='line'>jump <span class="nv">around</span>
+</span><span class='line'> <span class="o">=</span>&gt; nil
+</span><span class='line'>1.9.3-p448 :019 &gt; mgmg.super_power
+</span><span class='line'>NoMethodError: undefined method <span class="sb">`</span>super_power<span class="err">&#39;</span> <span class="k">for</span> <span class="c">#&amp;lt;Person:0x8fa2334 @name=&amp;ldquo;Mg Mg&amp;rdquo;&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+မည္သည့္နည္းကို အသုံးျပု ျပီး ေျကညာ သည္ ျဖစ္ေစ မိမိေျကညာလုိက္ေသာ method သည္ ၎ instance object အတြင္း singleton method တစ္ခု အျဖစ္ ၀င္ေရာက္သြားပါသည္။ object instance တစ္ခုတြင္ ရွိေသာ Singleton methods မ်ားကို သိလုိပါက &ldquo;Object#singleton_methods&rdquo; method ကုိ အသုံးျပု ၍ ျကည့္ရွုနုိင္ပါသည္။</p>
+
+<p>အပြင့္ class မ်ား နွင့္ Singleton method မ်ားသည္ ရူဘီ၏ ေျပာင္းလဲျပင္လြယ္ျဖစ္မွုကို ေဖာ္ျပပါသည္။ ထုိ့ေျကာင့္ ရူဘီ class တစ္ခု ကုိ ေနရာတစ္ေနရာ ထက္ပုိ ၍  ေျကညာအသုံးျပု နုိင္သလုိ runtime ေရာက္မွ အလ်ဥ္းသင့္ သလို method မ်ား ထည့္သြင္း အသုံးျပု နုိင္ပါသည္။ ထုိသုိ့ dynamicနည္းျဖင့္ ထိန္းခ်  ုပ္ ေရးသား ျခင္းကို Meta Programming ဟုေခါ္ျပီး Meta Programming သည္ အဆင့္ျမင့္ ရူဘီ ပရုိဂရမ္မ်ား ေရးသားရာ၌ တြင္က်ယ္စြာ အသုံးျပု ေသာ Programming Technique တစ္မ် ိ ုး ျဖစ္ပါသည္။ Meta Programming အေျကာင္းနွင့္ ပတ္သက္၍ အလ်င္းသင့္လွ်င္ ထပ္မံေဖာ္ျပသြားပါဦးမည္။</p>
+
+<h3>Class တစ္ခု အတြင္းရွိ Constant မ်ား</h3>
+
+<p>ရူဘီ တြင္ class definition တစ္ခု အတြင္း၌ constant မ်ား ေျကညာနုိင္ပါသည္။ ထုိ constant မ်ားကုိ class အျပင္ မွ အသုံးခ်လုိပါက Scope Resolution Operator &ldquo;::&rdquo; ကုိ အသုံးျပု ၍ ေခါ္ယူနုိင္ပါသည္။ဥပမာ
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Constant inside a class&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">A</span>
+</span><span class='line'><span class="no">SOME_CONST</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">puts</span> <span class="ss">A</span><span class="p">:</span><span class="ss">:SOME_CONST</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&ldquo;Output&rdquo;</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>1.9.3-p448 :018 &gt;puts A::SOME_CONST
+</span><span class='line'>&amp;ldquo;10&amp;rdquo;
+</span><span class='line'><span class="o">=</span>&gt; nil
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>class အမည္မ်ားသည္လည္း Constant မ်ား ျဖစ္ျပီး class တစ္ခုအား အျခား class တစ္ခုအတြင္း တြင္ ညွပ္ ၍ ေျကညာနုိင္ပါသည္။ ထုိသုိ့ေျကညာျခင္းအားျဖင့္ namespace အျဖစ္ အက် ိ ုးသက္ေရာက္ အသုံးျပုနုိင္ပါသည္။သို့ရာတြင္ Namespace ေပးျခင္းကုိ Module မ်ားျဖင့္ သာ Namespace ေပးျခင္းက ပုိအသုံးမ်ား ပါသည္။</p>
+
+<p>ဆက္ပါဦးမည္..</p>
+
+<p>ေက်းဇူးတင္ပါသည္</p>
+
+<p><em>dbc</em></p>
+
+<p>ေရွ့ ေဆာင္းပါး : <a href="http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby-3/">Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၃</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၃]]></title>
