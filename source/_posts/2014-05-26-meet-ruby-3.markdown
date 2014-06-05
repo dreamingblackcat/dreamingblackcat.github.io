@@ -216,3 +216,5 @@ UCSY
 *dbc*
 
 ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၂](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby-2/)
+
+ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၄](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)
