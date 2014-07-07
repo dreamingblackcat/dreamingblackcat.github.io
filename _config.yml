@@ -7,7 +7,8 @@ title: Dreaming Black Cat
 subtitle: Whispers of an ordinary cat...
 author: dbc
 simple_search: https://www.google.com/search
-description:
+description: "Ruby and web development related articles written by a Myanmar Dev enthusiast"
+keywords: "myanmar, ruby, rubyist, rails, ျမနမာ, ရူဘီ, web, development, programming, javascript"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in

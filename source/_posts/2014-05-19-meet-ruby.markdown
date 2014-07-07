@@ -5,6 +5,8 @@ date: 2014-05-19 12:11:11 +0630
 comments: true
 perma-link: meet-ruby
 categories: ruby dev series
+description: "Introduction to ruby in myanmar language part 1"
+keywords: "ruby, intro, basic, variable, conditional,part 1, myanmar, ရူဘီ, ေတြ့ဆုံျခင္း"
 ---
 
   ကြ်န္ေတာ့္ ဘ၀ တြင္ Programming နွင့္ပတ္သက္၍ အျကီးမားဆုံး အေျပာင္း အလဲ နွစ္ခု ရွိပါသည္။ ပထမတစ္ခုမွာ ကြန္ပ်ူ တာ ပထမနွစ္တြင္ ေဒါက္တာေဒါ္အိအိလုွိင္ နွင့္ C++ ျဖင့္ Programming အေျခခံကုိ သင္ျကားခဲ့ ရျခင္းျဖစ္ျပီး  ဒုတိယတစ္ခုမွာေတာ့ Ruby on Rails ကုိ စတင္ ေလ့လာခြင့္ ရခဲ့ျခင္းျဖစ္ပါသည္။ Ruby on Rails ကုိ စတင္ေလ့လာခြင့္ ရခဲ့ခ်ိန္မွ စ၍  Programming အေပါ္ထားေသာ ကြ်န္ေတာ့္ သေဘာထား မ်ား စြာ ေျပာင္းလဲခဲ့ ပါသည္။ ယင္းမတုိင္မီ က  Web Development သည္ ကြ်န္ေတာ့ အတြက္ ခက္ခဲေသာ ဘာသာတစ္ခုျဖစ္ခဲ့ သည္။ သုိ့ေသာ္ Convention Over Configuration နွင့္ Programmer Happiness ကုိ အဓိကထားေသာ Rails Framework နွင့္ Ruby Language က Web Development ကုိ လြယ္ကူေအာင္ ဖန္တီးေပးခဲ့သည္။ ထုိ့ အျပင္ ယခင္ က Programming Language အသစ္မ်ား၊ Technology အသစ္မ်ားကုိ ေျကာက္ရြံ ့ခဲ့ေသာ ကြ်န္ေတာ့္ကုိ လည္း  အသစ္ အဆန္း ဆုိတာ ေျကာက္စရာမဟုတ္ေျကာင္း မီးေမာင္းထုိးျပေပးခဲ့ပါသည္။ _why က ေျပာခဲ့သည့္ Vitamin Rအား ကြ်န္ေတာ္နွင့္ အလားတူ ခံစားေနရသူမ်ား အတြက္ ကြ်န္ေတာ္ တတ္စြမ္းသေလာက္ ကြ်န္ေတာ္ ျပန္လည္ ေ၀မွ်ခ်င္သည့္အတြက္ ဤ စာကုိ ေရးပါသည္။

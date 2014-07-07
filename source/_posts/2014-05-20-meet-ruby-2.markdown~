@@ -4,6 +4,8 @@ title: "Ruby နွင့္ ေတြ့ ဆုံျခင္း ၂"
 date: 2014-05-20 13:20:52 +0630
 comments: true
 categories: ruby dev series
+description: "Introduction to ruby in myanmar language part 2"
+keywords: "ruby, object, heirarchy, open class,part 2, myanmar, ရူဘီ, ေတြ့ဆုံျခင္း"
 ---
 ျပီးခဲ့ ေသာ [ေဆာင္းပါး](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/) တြင္ ရူဘီ language မိတ္ဆက္အျဖစ္ variable, types, condtionals စသည္တုိ့ အေျကာင္း ေရးခဲ့ပါသည္။ ဆက္လက္၍ looping structures မ်ား အေျကာင္း ေဖာ္ျပသြားပါမည္။
 
@@ -170,12 +172,13 @@ categories: ruby dev series
 
 ဆက္ပါဦးမည္..
 
+ေက်းဇူးတင္ပါသည္
+
+*dbc*
+
 ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၁](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)
 
 ေနာက္ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၃](http://dreamingblackcat.github.io/blog/2014/05/20/meet-ruby-3/)
 
 
 
-ေက်းဇူးတင္ပါသည္
-
-*dbc*

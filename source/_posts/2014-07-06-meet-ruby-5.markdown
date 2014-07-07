@@ -1,0 +1,255 @@
+---
+layout: post
+title: "Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၅"
+date: 2014-07-06 09:04:18 +0630
+comments: true
+categories: ruby dev series
+description: "Introduction to ruby in myanmar language part  5"
+keywords: "ruby, object, module, mix-in, monkey patching, part 5, namespace, basic, myanmar, ရူဘီ, ေတြ့ဆုံျခင္း"
+---
+
+ေရွ့ ေဆာင္းပါးတြင္ ရူဘီ ၏ object အေျခခံသဘာ၀အားေဖာ္ျပခဲ့ပါသည္။ ယခုေဆာင္းပါးတြင္ ရူဘီ၏ ပင္မ စြမ္းအားတစ္ခု ျဖစ္ေသာ Module မ်ား အေျကာင္းကုိ ေဖာ္ျပသြားမည္ ျဖစ္ပါသည္။
+
+###Module မ်ားအား တည္ေဆာက္ျခင္း
+
+Module မ်ားသည္ class မ်ားကဲ့သုိ့ပင္ method မ်ား၊ instance variable မ်ား၊ class variable မ်ား၊ constant မ်ားအား ျခုံ ငုံ ထည့္သြင္းထားနုိင္ေသာ၊ အမည္ေပးနုိင္သည့္ ကုတ္အစုအေ၀းတစ္ခု ျဖစ္ပါသည္။ သို့ရာ တြင္ Module တစ္ခုကုိ အသုံးျပု ၍ class တစ္ခုကဲ့ သုိ့ object instance မ်ား တည္ေဆာက္ျခင္း မျပု နုိင္ပါ။ Module တစ္ခုကုိ တည္ေဆာက္လုိပါက `class` keyword ေနရာတြင္ `module` keyword ကုိ အစားထုိးသုံးစြဲရပါသည္။ ထုိ `module` keyword နွင့္ `end` keyword အျကားတြင္ class တစ္ခုကဲ့သုိ့ ပင္ method မ်ား ေျကညာျခင္း၊ Constant မ်ားေျကညာျခင္း အစရွိသျဖင့္ ျပု လုပ္နုိင္ပါသည္။ သုိ့ရာတြင္ Module မ်ားသည္ class တစ္ခုကဲ့သုိ့ instance object မ်ား မတည္ေဆာက္နုိင္သည့္အတြက္ initialize hook method အားအသုံးျပု နုိင္မည္ မဟုတ္ပါ။ဥပမာ
+{%codeblock "Module Definition" lang:ruby%}
+module MyModule
+  MY_CONSTANT = "My constant"
+  def my_method
+  end
+end
+{%endcodeblock%}
+
+Module မ်ား အား အဓိက အား ျဖင့္ namespace မ်ား တည္ေဆာက္ရာ၌လည္းေကာင္း၊ class မ်ားအတြင္း တူညီေသာ functionality တစ္ခုအား mix-in မ်ား အျဖစ္ေရာေမြွအသုံးျပု ရာ၌ လည္းေကာင္း အသုံးခ်ေလ့ရွိပါသည္။
+<!-- more -->
+###Namespace အျဖစ္အသုံးျပု ျခင္း
+
+ပရုိဂရမ္ေရးသားရာ ၌ တစ္ေယာက္နွင့္ တစ္ေယာက္ Class အမည္မ်ား variable အမည္မ်ား Constant အမည္မ်ား တူညီျခင္း၊ ထပ္ျခင္း မ်ား မျဖစ္ေပါ္ေစရန္ Namespace အမည္မ်ားျဖင့္ ပုိင္းျခားေရးသားေလ့ရွိပါသည္။ ဥပမာ မိမိေရးသားေသာ class အမည္မွာ Document ျဖစ္သည္ဆုိပါစုိ့ ။ အကယ္၍ အျခားသူတစ္ေယာက္ေရးသားထားေသာ ကုတ္တြင္ လည္း Document ဟူေသာ class တစ္ခု တည္ေဆာက္ထားပါက ထုိကုတ္နွစ္ခုကုိ ေရာေမြွ အသုံးျပု ပါက မလုိလားအပ္ေသာ ဆုိးက် ိ ုးမ်ား ျဖစ္ေပါ္နုိင္ေပသည္။ အထူးသျဖင့္ ရူဘီသည္ အပြင့္ class မ်ားကုိ အသုံးျပု ျခင္းျဖစ္ရာ Error မျပဘဲနွင့္ မတူညီေသာ functionality မ်ား ရွု ပ္ေထြးသြားနုိင္ပါသည္။ ဥပမာ
+{%codeblock "Name Conflicts" lang:ruby%}
+#my code
+class Document
+  def format
+    puts "formating as a pdf"
+  end
+end
+
+#other people code
+class Document
+  def format
+    puts "formatting as a docx"
+  end
+end
+
+d = Document.new
+d.format
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+formatting as a docx
+=> nil
+{%endcodeblock%}
+
+
+အထက္ပါ ကုတ္တြင္ မိမိေရးသားထားေသာ Document class သည္ အျခားသူေရးသားထားေသာ Document class နွင့္ အသုံးျပုလုိက္ေသာ အခါ ရူဘီ ၏ အပြင့္ class သေဘာတရားအရ ေနာက္မွေရးေသာ `format` method သည္ မူလ `format` method အား overwrite ျဖစ္သြားျပီး "formatting as a docx" အျဖစ္ output ထြက္သြားမည္ျဖစ္ပါသည္။
+
+ထုိကဲ့သုိ့ အမည္ထပ္ျခင္းမ်ား မျဖစ္ေပါ္ေစ ရန္ Module မ်ား အား Namespace မ်ား အျဖစ္အသုံးျပုနုိင္ပါသည္။ အထက္ပါ ဥပမာတြင္ `Document` class အား မိမိ ကိုယ္ပုိင္ module ကုိယ္စီအသုံးျပု ျခင္းအားျဖင့္ ကုတ္နွစ္ခုေရာ ေထြးျခင္းကို ေရွာင္ရွားနုိင္ပါသည္။ ဥပမာ
+{%codeblock "Module as a Namespace" lang:ruby%}
+#my code
+module MyModule
+  class Document
+    def format
+      puts "formating as a pdf"
+    end
+  end
+end
+#other people code
+module OtherModule
+  class Document
+    def format
+      puts "formatting as a docx"
+    end
+  end
+end
+
+d = MyModule::Document.new
+d.format
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+formatting as a pdf
+=> nil
+{%endcodeblock%}
+ထုိသုိ့ module မ်ား အား Namespace အျဖစ္အသုံးျပု ပါက ၎ Namespace အတြင္းမွ Constant မ်ားအား Scope Resolution Operator `::` ကုိ module အမည္ေနာက္မွ ခံ၍ အသုံးျပု ရပါသည္။ ဤနည္းအားျဖင့္ module မ်ားကုိ အသုံးျပု ၍ မိမိလုိအပ္သေလာက္ Namespace မ်ား အျဖစ္ အဆင့္ဆင့္ ညွပ္ ၍ အသုံးျပုနုိင္ပါသည္။ စင္စစ္အားျဖင့္ Class မ်ားသည္လည္း Module မ်ား၏ sub-class မ်ားျဖစ္ရာ module မ်ားကဲ့သုိ့ ပင္ အဆင့္ဆင့္ညွပ္၍ အသုံးျပု နုိင္ေသာ္လည္း Namespace မ်ားသည္ instance မ်ားအျဖစ္တည္ေဆာက္ရန္မလုိအပ္သျဖင့္ Module မ်ားကုိ အသုံးျပု ျခင္းက ပိုမုိသင့္ေလ်ာ္ပါသည္။
+
+###Mix-in မ်ား
+
+Object-Oriented ပရုိဂရမ္မ်ားေရးသားရာ ၌ တူညီေသာဂုဏ္ရည္ ရွိသည့္ အရာမ်ားအား inheritance အသုံးျပု ျပီးေရးသားေလ့ရွိပါသည္။ တစ္ခါတစ္ရံ object တစ္ခု သည္ မတူညီေသာ object နွစ္ခု၏ ဂုဏ္ရည္မ် ိ ုး ရွိေနေသာအခါမ်ား ရွိတတ္ပါသည္။ ၎ အေျခအေနမ်ိ  ုးတြင္ Multiple inheritance(C++) အသုံးျပု ၍ျဖစ္ေစ၊ Interface(Java) မ်ား အသုံးျပု ၍ ျဖစ္ေစ  ေရးသားေလ့ရွိျကပါသည္။ ရူဘီတြင္မူ ထုိကဲ့ သုိ့ functionality တူေသာ အရာမ်ား အတြက္ Module မ်ား အသုံးျပု ၍ functionality ကုိ မ်ွေ၀သုံးျပီး ေရးသားေလ့ရွိပါသည္။ ဥပမာ programmer တစ္ေယာက္သည္ စာဖတ္သူ တစ္ေယာက္ျဖစ္သလို စာေရးသူတစ္ေယာက္လည္းျဖစ္သည္ဆုိပါစို့။ ထုိ အခါမ်ိ  ုး တြင္ စာဖတ္သူတစ္ေယာက္၏ အလုပ္မ်ား နွင့္ စာေရးသူတစ္ေယာက္၏ အလုပ္မ်ား အား လုံးကုိ programmer တစ္ေယာက္အားရရွိေစလုိပါက Programmer class အား Reader နွင့္ Writer ဟူေသာ module နွစ္ခုအား မွ်ေ၀လုိက္ျခင္းျဖင့္ Reader နွင့္ Writer တုိ့ ၏ စြမ္းရည္မ်ားအားလုံး ရရွိသြားေစမည္ ျဖစ္ပါသည္။ထုိ ကဲ့သုိ့ မ်ွေ၀ျခင္းကုိ mix-in ဟုေခါ္ပါသည္။ ၎ကဲ့သုိ့ mix-in မ်ား အျဖစ္ အသုံးျပု ျခင္းသည္ ပိုမို အသုံး၀င္ျပီး module မ်ား ၏ စြမ္းရည္ကိုလည္း ပုိမုိေပါ္လြင္ေစပါသည္။ဥပမာ
+{%codeblock "Mix-in" lang:ruby%}
+module Reader
+  def read
+    puts "I read stuff"
+  end
+end
+module Writer
+  def write
+    puts "I write stuff"
+  end
+end
+
+class Programmer
+  include Reader
+  include Writer
+  def develop
+    puts "I develop programs"
+  end
+end
+
+p = Programmer.new
+p.read
+p.write
+p.develop
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+I read stuff
+=> nil
+I write stuff
+=> nil
+I develop programs
+=> nil
+{%endcodeblock%}
+အထက္ပါကုတ္ တြင္ ပထမ `Reader` နွင့္ `Writer` ဟူေသာ module နွစ္ခု ေျကညာလုိက္ပါသည္။ ထုိ အခ်ိန္တြင္ ၎ module နွစ္ခု၏ instance method မ်ားျဖစ္ေသာ `read` နွင့္ `write` တုိ့ကုိ တုိက္ရုိက္အသုံးျပု ၍ မရနုိင္ေသးပါ။ ၎တုိ့ကုိ အသုံးျပု နုိင္ရန္ `Programmer` class အတြင္းသုိ့ `include` keyword ျဖင့္ mix-in မ်ား အျဖစ္ထည့္သြင္းလုိက္ပါသည္။ ထုိအခါ `Programmer` class ၏ instance အားလုံးတြင္ `Reader` နွင့္ `Writer` တုိ့၏ instance method မ်ားအား အသုံးျပု ခြင့္ရသြားပါသည္။ အကယ္၍ Programmer ကဲ့သုိ့ပင္ Engineer တစ္ေယာက္သည္လည္း စာေရး၊ စာဖတ္အလုပ္ကိုလုပ္နုိင္သည္ဆုိပါစို့။ 
+{%codeblock "Module as a Namespace" lang:ruby%}
+class Engineer
+  include Reader
+  include Writer
+  def build
+    puts "I build things"
+  end
+end
+
+e = Engineer.new
+e.read
+e.write
+e.build
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+I read stuff
+=> nil
+I write stuff
+=> nil
+I build things
+=> nil
+{%endcodeblock%}
+အထက္ပါကုတ္ တြင္ မူလ ေျကညာခဲ့ေသာ `Reader` နွင့္ `Writer` module မ်ားကုိ ပင္ `Engineer` class အတြင္းသုိ့ mix-in အျဖစ္ထပ္မံ include လုပ္လုိက္ပါသည္။ ထုိအခါ `Engineer` class ၏ instance မ်ားသည္လည္း `read`, `write` ဟူေသာ instance method မ်ားေခါ္ယူနိုင္သည့္ object မ်ားျဖစ္လာပါသည္။ ဤ နည္းအားျဖင့္ တူညီေသာ method မ်ား အား module မ်ား အျဖစ္ခြဲထုတ္ျခင္းအားျဖင့္ ေရးရေသာ ကုတ္ပမာဏကို ေလ်ာ့က်ေစျပီး လုိအပ္သလုိ mix-in ျပု လုပ္၍ သုံးစြဲနုိင္စြမး္ကုိ ရလာေစပါသည္။
+
+ထုိကဲ့သုိ့ module မ်ား အသုံးျပု ပုံကုိ ရူဘီ၏ core library အတြင္းတြင္လည္းေတြ့ရွိနုိင္ပါသည္။ ဥပမာအားျဖင့္ core library အတြင္းတြင္ object မ်ား တစ္ခုနွင့္တစ္ခု >, < အစရွိသျဖင့္ နွုိင္းယွဥ္ေစနုိင္ေသာ functionality အား `Comparable` module အျဖစ္ တည္ေဆာက္ထားပါသည္။ ထုိ့ေျကာင့္ မိမိတည္ေဆာက္လုိက္ေသာ class တစ္ခုတြင္ >,< စသည္တုိ့ကုိ အသုံးျပု လုိပါက `Comparable` module အား mix-in လုပ္လုိက္ျခင္းအား ျဖင့္ အသုံးျပုနုိင္ပါသည္။ __မွတ္ရန္တစ္ခ်က္မွာ `Comparable` module အား mix-in လုပ္လုိေသာ class သည္ <=> operator ကိုေတာ့ တည္ေဆာက္ေပးရန္လုိပါသည္။သုိ့မွသာ မည္သည့္ စည္းမ်ဥ္းကို အသုံးျပု ၍ နွုိင္းယွဥ္ရမည္ကုိ ခြဲျခားနုိင္မည္ျဖစ္ပါသည္။__
+
+`include` နွင့္ `extend` 
+တစ္ခါတစ္ရံ module တစ္ခုကုိ mix-in လုပ္ရာတြင္ ၎၏ functionalityကုိ instance မ်ားထက္ class level အျဖစ္သာ အသုံးျပု လုိျခင္းလည္းရွိနုိင္ပါသည္။ `extend` keyword သည္ module တစ္ခုအား class level တြင္ အသုံးျပု နုိင္ေအာင္ ျပုလုပ္ေပးပါသည္။ ဥပမာ 
+{%codeblock "Extending a module" lang:ruby%}
+module Greeter
+  def greet
+    puts "hello"
+  end
+end
+class Person
+  extend Greeter
+end
+Person.greet
+p = Person.new
+p.greet
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+>Person.greet
+hello
+=> nil
+>p.greet
+=> NoMethodError: undefined method `greet' for #<Person:0xa82b824>
+
+{%endcodeblock%}
+အထက္ပါကုတ္ တြင္ `Greeter` module အား Person class အတြင္းတြင္ `extend` လုပ္လုိက္ပါသည္။ ထို့ေျကာင့္ `Greeter` module အတြင္းမွ method မ်ားသည္ `Person` class object ၏ method မ်ား အျဖစ္အသုံးျပု၍ ရသြားျပီး class method အသုံးျပုသည့္ အတုိင္း `Person.greet` ဟူ ၍ အသုံးျပုနုိင္သြားပါသည္။ သုိ့ရာတြင္ `extend` ျပုလုပ္ျခင္းသည္ မိမိ extend ျပုလုပ္လုိေသာ class object အတြင္း၌ သာ mix-in ျပုလုပ္ျခင္း ျဖစ္ျပီး ၎ class object  ၏  instance object မ်ားအတြင္း၌ အသုံးမျပုနုိင္ေပ။ ထုိ့ေျကာင့္ `Person` instance `p` တြင္ greet method ကုိ ေခါ္ျကည့္ပါက NoMethodError ျပမည္ျဖစ္သည္။ ထုိ့ေျကာင့္ `include` သည္ instance object မ်ားအတြင္း အသုံးျပုနုိင္ေစရန္ mix-in လုပ္ေပးျပီး `extend` ကေတာ့ class method မ်ား အျဖစ္ အသုံးျပုနိင္ေစရန္ `mix-in` လုပ္ေပးသည္ ဟု မွတ္နုိင္ပါသည္။ သုိ့ရာတြင္ သိထားသင့္သည့္ တစ္ခ်က္ မွာ စင္စစ္အားျဖင့္ `extend` နွင့္ `include` မ်ားသည္ keyword မ်ား သဖြယ္ အသုံးျပုေသာ္လည္း စင္စစ္အား ျဖင့္ method call မ်ားသာ ျဖစ္ပါသည္။ `include` သည္ `Module` class ၏ class method တစ္ခုျဖစ္ျပီး `extend` သည္ `Object` class ၏ class method တစ္ခုျဖစ္ပါသည္။ `Class` class ၏ parent မွာ `Module` class ျဖစ္ျပီး `Module` class ၏ parent မွာ Object ျဖစ္ရာ class definition တစ္ခု အတြင္း၌ `Module` နွင့္ `Object` တုိ့ ၏ method မ်ားကုိ ေခါ္ယူခြင့္ရွိျခင္းသာ ျဖစ္ပါသည္။ ထုိ့ေျကာင့္ class method အမည္မ်ားေပးရာတြင္ မလုိလားအပ္ေသာ effect မ်ား မျဖစ္ေအာင္ `include` နွင့္ `extend` method မ်ားအား overwrite မလုပ္မိဖုိ့လုိပါသည္။__ထုိ့ အျပင္ `extend` သည္ `Object` class method တစ္ခုျဖစ္သည့္ အတြက္ class မ်ား တြင္သာ မက မည္သည့္ object တြင္မဆုိ အသုံးျပုနုိင္သည္ကုိ သတိခ်ပ္ဖုိ့ေတာ့လိုပါသည္။__ ထုိသုိ့ object တစ္ခုခ်င္းအေပါ္ အသုံးျပုနုိင္ပုံကုိ ေအာက္တြင္ ထပ္မံေဖာ္ျပသြားပါမည္။
+
+###Pure Functional Module မ်ား
+
+တစ္ခါတစ္ရံ function တစ္ခု သည္ မည္သည့္ အေျခအေနကိုမွ မီွခုိျခင္းမရွိပဲ သူ့ဘာသာသူ ရွိေနတတ္တာမ်ိ  ုး ရွိပါသည္။ ဥပမာ `Math` module တြင္ sin, cos, log10 အစရွိေသာ Mathamatical function မ်ားသည္ မည္သည့္ object နွင့္မွ် ဆက္စပ္စရာမလုိပဲ argument ေပးရုံနွင့္ အေျဖထြက္ေသာ pure function မ်ားျဖစ္ပါသည္။ Pure function မ်ား၏ ဂုဏ္ရည္မွာ တူညီေသာ parmeter အတြက္ အျမဲတမ္းတူညီေသာ ရလဒ္ထြက္ေပါ္ျခင္း ျဖစ္သည္။ ထုိကဲ့သုိ့ function မ်ား ကို မည္သည့္ object မွတစ္ဆင့္ မေခါ္ပဲ တုိက္ရုိက္အသုံးျပု နုိင္ရန္အတြက္လည္း `Module` မ်ားကို အသုံးခ်နုိင္ပါသည္။ ထုိသုိ့ အသုံးျပုလုိပါက `module_function`method ကုိ အသုံးျပုရပါသည္။ `module_function` method သည္ private,protected အစရွိေသာ method မ်ား နွင့္ သုံးပုံအတူတူပင္ ျဖစ္ပါသည္။ ဥပမာ
+{%codeblock "Module as a standalone function bag" lang:ruby%}
+module Greeter
+  def greet
+    puts "hello"
+  end
+  module_function :greet
+end
+Greeter.greet
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+>Greeter.greet
+hello
+=>nil
+{%endcodeblock%}
+
+အထက္ပါကုတ္တြင္ `Greeter` module ၏ `greet` method အား `module_function` ျဖင့္ ေျကညာလုိက္သည့္အတြက္ Greeter module မွ တစ္ဆင့္တုိက္ရုိက္ေခါ္ယူ၍ ရသြားပါသည္။ ဤနည္းအားျဖင့္ မိမိ အသုံးျပု လုိေသာ function မ်ားအား class တစ္ခုအျဖစ္ မတည္ေဆာက္ပဲ module မ်ားအား function container မ်ား အျဖစ္ အသုံးျပုနုိင္ပါသည္။ ဥပမာ အား ျဖင့္ ရူဘီ core library မွ `Math` module တြင္ sin,cos,log အစရွိေသာfunction မ်ားသည္ အထက္ပါ အတုိင္းဖြဲ့စည္းထားျခင္းျဖစ္ပါသည္။ `Math.sin`, `Math.cos` စသျဖင့္ ေခါ္ယူအသုံးျပုနုိင္ပါသည္။
+
+### Module မ်ား ကုိ အသုံးျပု ၍ Monkey Patching ကုိ ေရွာင္ရွားျခင္း
+
+ရူဘီသည္ အပြင့္ class မ်ားျဖင့္တည္ေဆာက္ထားေသာ language တစ္ခုျဖစ္ရာ core library class မ်ား အပါအ၀င္ မည္သည့္ class ကုိ မဆုိ မိမိ လိုအပ္သလုိ ဖြင့္ ၍ ျပင္ဆင္နုိင္ပါသည္။ ထုိကဲ့သုိ့ ျပင္ဆင္ျခင္းကုိ Monkey Patching ဟုေခါ္ပါသည္။ သုိ့ရာ တြင္ Monkey Patching ၏ အားနည္းခ်က္မွာ မိမိျပင္ဆင္လုိက္ေသာ functionality သည္ အျခား ပရုိဂရမ္မ်ားက မီွတည္သုံးစြဲေနေသာ functionality ျဖစ္ေနပါက မိမိျပင္ဆင္ခ်က္သည္ မူလ ကုတ္နွင့္ မကုိက္ညီလွ်င္ မလိုလားအပ္ေသာ ဆုိးက်ိ  ုးမ်ား ျဖစ္ေပါ္နုိင္ျခင္းျဖစ္ပါသည္။ ဥပမာ မိမိ သည္ `String` class ၏ `*` method အလုပ္လုပ္ပုံအား
+ျပင္ဆင္လုိသည္ဆုိပါစုိ့။
+{%codeblock "Original * Method" lang:ruby %}
+"abc" * 2
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+=> "abcabc"
+{%endcodeblock%}
+ဤကဲ့သုိ့  string ကုိ ေနာက္မွ concat လုပ္မည့္အစား array ျဖစ္သုိ့ ေျပာင္းလဲသည့္ functionality အား Monkey Patch လုပ္လုိက္မည္ဆုိပါစုိ့။
+{%codeblock "Monkey Patching * method" lang:ruby%}
+class String
+  def *(num)
+    arr = []
+    num.times do
+      arr.push(self)
+    end
+    arr
+  end
+end
+
+"abc" * 2
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+>"abc" * 2
+=>["abc","abc"]
+
+{%endcodeblock%}
+အထက္ပါအတုိင္း Monkey Patch လုပ္ လုိက္ပါက မူ လ `String.*` method ၏ လုပ္ေဆာင္ခ်က္သာ မက return type ပါေျပာင္းလဲသြားပါသည္။ မိမိလုိခ်င္ေသာ လုပ္ေဆာင္ခ်က္ကို ရရွိသျဖင့္ အဆင္ေျပျပီဟု္ ထင္ရေသာ္လည္း စင္စစ္ အား ျဖင့္ မူလ `String.*` ၏ လုပ္ေဆာင္ခ်က္ ပ်က္ယြင္း သြားသျဖင့္ ၎အား တည္မွီေနေသာ method မ်ား တြင္ error တက္ကုန္မည္ျဖစ္ပါသည္။ အထက္ပါဥပမာ တြင္ `String` class ကုိ ထပ္မံပြင့္ မည္ျဖစ္ပါက `*` method သည္ `String` return ျပန္ရမည့္ အစား `Array` ျပန္ထားေျကာင္း TypeError တက္မည္ျဖစ္ပါသည္။ အထက္ပါဥပမာ သည္ သတိမထားပဲ Monkey Patching ၏ ဆုိးက်ိ  ုးကုိ ျမင္သာေစပါသည္။ သုိ့ ရာ တြင္ Monkey Patching သည္ လုံး၀ အသုံးမက် ေသာ feature တစ္ခုေတာ့ မဟုတ္ပါ။ မူလ method မ်ား၏ လုပ္ေဆာင္ခ်က္အေပါ္ မထိခိုက္ေစပဲ အသုံးျပုနုိိင္ပါက အလြန္အသုံး၀င္ေသာ လုပ္ေဆာင္ခ်က္တစ္ခု ျဖစ္ပါသည္။
+
+Module မ်ား ၏ Mix-in functionality ကုိ အသုံးခ်၍ မိမိသုံးလိုေသာ object တြင္ Module ကုိ extend လုပ္ျပီး စြမ္းေဆာင္ရည္ ထပ္ျဖည့္ခ်င္းအားျဖင့္ Monkey Patching ကုိ ေရွာင္လြွဲနုိင္ပါသည္။ ဥပမာ မိမိတုိ့ သည္ အထက္ပါ `*` method Monkey Patch အား Module method တစ္ခုအျဖစ္တည္ေဆာက္နုိင္ပါသည္။
+{%codeblock "Extending functionality on an object instance with module" lang:ruby%}
+module MyEnhancedString
+  def *(num)
+    arr = []
+    num.times do
+      arr.push(self)
+    end
+    arr
+  end
+end
+my_str = String.new("abc")
+my_str.extend(MyEnhancedString)
+my_str * 2
+"abc" * 2
+{%endcodeblock%}
+{%codeblock "Output" lang:sh%}
+>my_str * 2
+=>["abc","abc"]
+>"abc" * 2
+=> "abcabc"
+
+{%endcodeblock%}
+
+အထက္ပါ ဥပမာ တြင္ မိမိ လုိခ်င္ေသာ `String` လုပ္ေဆာင္ခ်က္အား မိမိသုံးလုိေသာ `String` object တြင္သာ extend လုပ္ျခင္းအားျဖင့္ အျခားေသာ `String` instance မ်ားကုိ မထိခုိက္ေစေတာ့ပါ။ ဤသည္ မွာ object instance တစ္ခုခ်င္းအထိ ထိန္းခ်  ုပ္ နုိင္ေသာ ရူဘီ ၏ စြမ္းအားပင္ ျဖစ္ပါသည္။
+
+ဆက္ပါဦးမည္..
+
+ေက်းဇူးတင္ပါသည္
+
+*dbc*
+
+
+ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၄](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)

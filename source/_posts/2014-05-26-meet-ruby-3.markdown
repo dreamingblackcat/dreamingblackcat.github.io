@@ -4,6 +4,8 @@ title: "Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၃"
 date: 2014-05-26 09:58:44 +0630
 comments: true
 categories: ruby dev series
+description: "Introduction to ruby in myanmar language part 3"
+keywords: "ruby, object, inheritance, oop, class,part 3, myanmar, ရူဘီ, ေတြ့ဆုံျခင္း"
 ---
 ျပီးခဲ့ ေသာ[ေဆာင္းပါး](http://dreamingblackcat.github.io/blog/2014/05/26/meet-ruby-2/)တြင္ Looping Structures မ်ားအတြက္ အသုံးျပ ုနုိင္သည့္ နည္းလမ္းမ်ားကုိ ေဖာ္ျပခဲ့ပါသည္။ ယခု ရူဘီ ၏ object-oriented programming စြမ္းအား ကုိ မိတ္ဆက္ရန္ အခ်ိန္တန္ျပီဟုထင္ပါသည္။
 
@@ -217,4 +219,4 @@ UCSY
 
 ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၂](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby-2/)
 
-ေရွ့ ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၄](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)
+ေနာက္ေဆာင္းပါး : [Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၄](http://dreamingblackcat.github.io/blog/2014/05/19/meet-ruby/)

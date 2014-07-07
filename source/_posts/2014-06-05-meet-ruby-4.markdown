@@ -4,6 +4,8 @@ title: "Ruby နွင့္ ေတြ့ ဆုံ ျခင္း ၄"
 date: 2014-06-05 12:01:50 +0630
 comments: true
 categories: ruby dev series
+description: "Introduction to ruby in myanmar language part 4"
+keywords: "ruby, object, heirarchy, open class,part 4, myanmar, ရူဘီ, ေတြ့ဆုံျခင္း"
 ---
 
 ျပီးခဲ့ ေသာ[ေဆာင္းပါး](http://dreamingblackcat.github.io/blog/2014/05/26/meet-ruby-3/) တြင္ ရူဘီ ၏ အေျခခံ OOP feature မ်ားကုိ ေဖာ္ျပခဲ့ ပါသည္။ ရူဘီသည္ ယခင္ေဆာင္းပါးမ်ားတြင္ ေရးခဲ့သည့္အတုိင္း Object မ်ား ကုိ အသုံးျပု ၍ ဖြဲ့ စည္းတည္ေဆာက္ထားေသာ language တစ္ခုျဖစ္ပါသည္။ Java အစရွိေသာ language မ်ားကဲ့ သုိ့ primitive data type မ်ားကုိ အေျခခံ၍ object မ်ား တည္ေဆာက္ေရးသားျခင္းမဟုတ္ပဲ။ Number နွင့္ String ကဲ့ သုိ့ primitive data type မ်ားသည္ ပင္လွ်င္ Object မ်ား အျဖစ္ဖြဲ့ စည္းတည္ေဆာက္ထားျခင္းျဖစ္ပါသည္။ ထုိ့ေျကာင့္ ရူဘီ ၏ OOP ကုိ နားလည္လုိပါ က ရူဘီ language အတြင္း object မ်ား အခ်င္းခ်င္း မည္သုိ့ မည္ပုံ သက္ေရာက္ဆက္နြယ္ေနသည္ ကုိ သိထားဖုိ့ လိုအပ္ပါသည္။
